@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 139.6833, g: 154.45863, b: 193.75778, a: 1}
+  m_IndirectSpecularColor: {r: 146.53975, g: 160.83253, b: 202.52835, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrain: {fileID: 270216526}
-  newOrder: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c000000
+  newOrder: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d000000
 --- !u!4 &1218815608
 Transform:
   m_ObjectHideFlags: 0

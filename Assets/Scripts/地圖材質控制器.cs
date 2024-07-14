@@ -8,20 +8,22 @@ public class 地圖材質控制器 : MonoBehaviour
 {
     public Terrain terrain; // 拖曳你的 Terrain 物件到這裡
     public int[] newOrder; // 設定新的順序，例如 [2, 0, 1] 表示第三個 layer 移到第一個，第一個 layer 移到第二個，第二個 layer 移到第三個
-    private int currentLayerIndex = 0; // 追蹤當前需要移到最上面的圖層索引
+    private int currentOrderIndex = 0; // 追蹤當前需要使用的順序索引
+    private TerrainLayer[] originalLayers; // 保存原始圖層順序
 
     void Start()
     {
-        // 初始化 newOrder，與當前 layers 數量相同
-        int layersCount = terrain.terrainData.terrainLayers.Length;
-        newOrder = new int[layersCount];
-        for (int i = 0; i < layersCount; i++)
+        if (newOrder == null || newOrder.Length == 0)
         {
-            newOrder[i] = i;
+            Debug.LogError("請設置 newOrder 順序！");
+            return;
         }
 
-        // 初次更新將第一個圖層移到最上面
-        MoveLayerToTop(currentLayerIndex);
+        // 保存原始圖層順序
+        originalLayers = terrain.terrainData.terrainLayers;
+
+        // 初次更新將第一個圖層順序應用
+        UpdateLayerOrder(newOrder);
     }
 
     void Update()
@@ -29,9 +31,9 @@ public class 地圖材質控制器 : MonoBehaviour
         // 這裡可以設置一個定時器或其他條件來定期觸發更新
         if (Input.GetKeyDown(KeyCode.U)) // 例如按下 U 鍵
         {
-            // 更新 currentLayerIndex 並循環
-            currentLayerIndex = (currentLayerIndex + 1) % newOrder.Length;
-            MoveLayerToTop(currentLayerIndex);
+            // 更新 currentOrderIndex 並循環
+            currentOrderIndex = (currentOrderIndex + 1) % newOrder.Length;
+            MoveLayerToTop(newOrder[currentOrderIndex]);
         }
     }
 
@@ -64,18 +66,6 @@ public class 地圖材質控制器 : MonoBehaviour
 
     private void UpdateLayerOrder(int[] newOrder)
     {
-        // 設置新的順序
-        this.newOrder = newOrder;
-
-        // 取得當前 Terrain 的 layers
-        TerrainLayer[] originalLayers = terrain.terrainData.terrainLayers;
-
-        if (originalLayers.Length != newOrder.Length)
-        {
-            Debug.LogError("新順序陣列的長度必須與現有 layers 的數量相同！");
-            return;
-        }
-
         // 根據 newOrder 重排 layers
         TerrainLayer[] reorderedLayers = new TerrainLayer[originalLayers.Length];
         for (int i = 0; i < newOrder.Length; i++)
