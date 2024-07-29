@@ -2304,7 +2304,7 @@ PrefabInstance:
     - target: {fileID: 6949320905721467585, guid: 4f9827bb3c301ab4c8afe05f783f18a2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5973,13 +5973,13 @@ MonoBehaviour:
   - {fileID: 6949320905721467585, guid: 4f9827bb3c301ab4c8afe05f783f18a2, type: 3}
   "\u6575\u4EBA":
   - {fileID: 1720726342414715163, guid: 170e8194affb9854d945a96d2b51f633, type: 3}
-  "\u7832A\u4E0A\u9650": 20
+  "\u7832A\u4E0A\u9650": 6
   "\u7832B\u4E0A\u9650": 5
   "\u76EE\u524D\u95DC\u5361": 1
   "\u6BCF\u5E7E\u79D2\u7522\u751F\u4E00\u6CE2": 10
   "\u6BCF\u6B21\u7522\u751F\u6575\u4EBA\u7684\u9593\u9694": 1
-  "\u6BCF\u6B21\u751F\u6210\u6575\u4EBA\u6578": 1
-  "\u653B\u52E2\u4E0A\u9650": 1
+  "\u6BCF\u6B21\u751F\u6210\u6575\u4EBA\u6578": 2
+  "\u653B\u52E2\u4E0A\u9650": 3
   "\u76EE\u524D\u7B2C\u5E7E\u6CE2\u653B\u52E2": 0
   "\u653B\u52E2\u6587\u5B57": {fileID: 62228255}
   "\u8CC7\u6E90\u6587\u5B57": {fileID: 449029484}
