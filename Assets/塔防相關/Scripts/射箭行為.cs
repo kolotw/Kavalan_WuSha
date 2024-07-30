@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
-public class 漢人行為 : MonoBehaviour
+public class 射箭行為 : MonoBehaviour
 {
     Animator anim;
 
