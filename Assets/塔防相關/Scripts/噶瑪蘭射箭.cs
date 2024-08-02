@@ -63,7 +63,7 @@ public class 噶瑪蘭射箭 : MonoBehaviour
     }
     public void 射出箭()
     {
-        print("射出箭");
+        //print("射出箭");
         顯示箭 = false;
         arrow.GetComponent<Rigidbody>().velocity = arrow.transform.up * 10f;
     }
