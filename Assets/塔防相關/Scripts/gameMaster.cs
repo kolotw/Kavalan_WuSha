@@ -42,15 +42,15 @@ public class gameMaster : MonoBehaviour
         StartCoroutine( 一波敵人());
     }
     void 熄火() {
-        GameObject[] turrets = GameObject.FindGameObjectsWithTag("砲台");
+        GameObject[] turrets = GameObject.FindGameObjectsWithTag("噶瑪蘭");
         foreach (GameObject t in turrets)
         {
             if (t.GetComponent<Animator>() != null)
             {
-                t.transform.Find("Rig 1/HeadAim").gameObject.SetActive(false);
-                t.GetComponent<Animator>().SetBool("WIN", true);
+                t.transform.Find("RigHead/HeadAim").gameObject.SetActive(false);
+                //t.GetComponent<Animator>().SetBool("WIN", true);
             }
-            t.GetComponent<turret>().enabled = false;
+            t.GetComponent<噶瑪蘭_屬性設定>().enabled = false;
         }
         Camera.main.gameObject.GetComponent<deploy>().enabled = false;
         已熄火 = true;
@@ -86,7 +86,7 @@ public class gameMaster : MonoBehaviour
             else
             {
                 攻擊倒數 = 0;
-                if (GameObject.FindGameObjectsWithTag("敵人").Length == 0)
+                if (GameObject.FindGameObjectsWithTag("漢人").Length == 0)
                 {
                     攻勢文字.text = "你贏了";
                     EndGame = true;
