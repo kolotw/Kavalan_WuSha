@@ -29,7 +29,7 @@ public class 地圖材質控制器 : MonoBehaviour
     void Update()
     {
         // 這裡可以設置一個定時器或其他條件來定期觸發更新
-        if (Input.GetKeyDown(KeyCode.U)) // 例如按下 U 鍵
+        if (Input.GetKeyDown(KeyCode.Space)) // 例如按下 U 鍵
         {
             // 更新 currentOrderIndex 並循環
             currentOrderIndex = (currentOrderIndex + 1) % newOrder.Length;
