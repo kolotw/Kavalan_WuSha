@@ -34,25 +34,23 @@ public class gameMaster : MonoBehaviour
     bool EndGame = false;
     bool 已熄火 = false;
 
-    public GameObject 開始畫面;
-
     // Start is called before the first frame update
     void Start()
     {
         生成點 = GameObject.FindGameObjectsWithTag("生成點");
         攻擊倒數 = 每幾秒產生一波;
-        
+        StartCoroutine( 一波敵人());
     }
     void 熄火() {
-        GameObject[] turrets = GameObject.FindGameObjectsWithTag("噶瑪蘭");
+        GameObject[] turrets = GameObject.FindGameObjectsWithTag("砲台");
         foreach (GameObject t in turrets)
         {
             if (t.GetComponent<Animator>() != null)
             {
-                t.transform.Find("RigHead/HeadAim").gameObject.SetActive(false);
-                //t.GetComponent<Animator>().SetBool("WIN", true);
+                t.transform.Find("Rig 1/HeadAim").gameObject.SetActive(false);
+                t.GetComponent<Animator>().SetBool("WIN", true);
             }
-            t.GetComponent<噶瑪蘭_屬性設定>().enabled = false;
+            t.GetComponent<turret>().enabled = false;
         }
         Camera.main.gameObject.GetComponent<deploy>().enabled = false;
         已熄火 = true;
@@ -60,8 +58,6 @@ public class gameMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (開始畫面.activeInHierarchy == true) return;
-
         if (EndGame) {
             if(!已熄火)
                 熄火();
@@ -90,7 +86,7 @@ public class gameMaster : MonoBehaviour
             else
             {
                 攻擊倒數 = 0;
-                if (GameObject.FindGameObjectsWithTag("漢人").Length == 0)
+                if (GameObject.FindGameObjectsWithTag("敵人").Length == 0)
                 {
                     攻勢文字.text = "你贏了";
                     EndGame = true;
@@ -116,9 +112,4 @@ public class gameMaster : MonoBehaviour
         }
     }
 
-    public void 按下開始()
-    {
-        開始畫面.SetActive(false);
-        StartCoroutine(一波敵人());
-    }
 }

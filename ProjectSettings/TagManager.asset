@@ -3,15 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - "\u751F\u6210\u9EDE"
-  - "\u4E2D\u7E7C\u9EDE"
-  - "\u53EF\u90E8\u7F72"
-  - "\u6F22\u4EBA\u6B66\u5668"
-  - "\u5676\u746A\u862D\u6B66\u5668"
-  - "\u6F22\u4EBA"
-  - "\u5676\u746A\u862D"
-  - "\u6575\u65B9\u5B50\u5F48"
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -19,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - "\u6392\u9664\u78B0\u649E"
+  - 
   - 
   - 
   - 
