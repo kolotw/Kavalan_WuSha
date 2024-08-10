@@ -14606,7 +14606,7 @@ AnimationClip:
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
     m_StopTime: 0.70000005
-    m_OrientationOffsetY: 0
+    m_OrientationOffsetY: -90
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
@@ -28036,7 +28036,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.7
+  - time: 0.4
     functionName: shootComplete
     data: 
     objectReferenceParameter: {fileID: 0}
