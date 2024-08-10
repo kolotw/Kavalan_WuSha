@@ -2645,8 +2645,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 265163050}
-  iconTransforms: []
-  isInverseTransparency: 
+  iconTransforms:
+  - {fileID: 532681836}
+  - {fileID: 1967610720}
+  - {fileID: 829611156}
+  - {fileID: 1572761657}
+  - {fileID: 1934651607}
+  - {fileID: 39667671}
+  - {fileID: 2126540831}
+  - {fileID: 906543778}
+  - {fileID: 1412202449}
+  - {fileID: 543916379}
+  - {fileID: 1549793853}
+  - {fileID: 172038717}
+  - {fileID: 1323309154}
+  - {fileID: 1625936253}
+  - {fileID: 1033262242}
+  - {fileID: 289174567}
+  - {fileID: 76941895}
+  - {fileID: 587368878}
+  - {fileID: 1872163995}
+  - {fileID: 962478803}
+  - {fileID: 827509807}
+  - {fileID: 920604913}
+  - {fileID: 1423990750}
+  - {fileID: 509795548}
+  - {fileID: 1430935563}
+  - {fileID: 358543465}
+  - {fileID: 747423892}
+  - {fileID: 357291289}
+  isInverseTransparency: 00000000000101010101000000000000010101010101010101010101
   zoomSpeed: 1.5
   minZoom: 1
   maxZoom: 10
