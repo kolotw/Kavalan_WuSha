@@ -70,3 +70,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/塔防相關/資源包/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Animations/2Hand-Sword/2Hand-Sword-Attack1.anim.meta
+Assets/塔防相關/Prefabs/農具.prefab.meta
+Assets/塔防相關/Prefabs/射出的箭-漢.prefab.meta
