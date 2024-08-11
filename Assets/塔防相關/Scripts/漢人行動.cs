@@ -148,7 +148,16 @@ public class 漢人行動 : MonoBehaviour
     void 傳目標給角色()
     {
         //將目標傳到射箭行為，讓角色可以看著目標。
-        GetComponent<漢人射箭>().目標 = 目標;
+        if (this.transform.name == "漢人_農夫_鋤頭(Clone)") 
+        {
+            GetComponent<漢人砍劈>().目標 = 目標;
+        }
+        else if(this.transform.name == "漢人-弓箭手 F1(Clone)") 
+        {
+            GetComponent<漢人射箭>().目標 = 目標;
+        }
+
+        
         transform.Find("Rig 1/HeadAim").gameObject.GetComponent<MultiAimConstraint>().data.sourceObjects
             = new WeightedTransformArray { new WeightedTransform(目標, 1) };
     }
