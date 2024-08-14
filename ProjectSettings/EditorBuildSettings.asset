@@ -6,12 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+<<<<<<< HEAD
     path: "Assets/EBook/Scenes/\u76F4\u66F8/Menu.unity"
     guid: 3bcd195e4cc257b4097db9690eb80d4e
   - enabled: 1
+=======
+>>>>>>> 8f69d64 (電子書場景登錄build settings)
     path: "Assets/EBook/Scenes/\u76F4\u66F8/Chapter1.unity"
     guid: cf147dadc0859724791b762da21c40fd
   - enabled: 1
     path: "Assets/EBook/Scenes/\u76F4\u66F8/Chapter2.unity"
     guid: 42f906f9ba2e16641b3500e00e6aa53c
+<<<<<<< HEAD
+=======
+  - enabled: 1
+    path: "Assets/EBook/Scenes/\u76F4\u66F8/Menu.unity"
+    guid: 3bcd195e4cc257b4097db9690eb80d4e
+>>>>>>> 8f69d64 (電子書場景登錄build settings)
   m_configObjects: {}
