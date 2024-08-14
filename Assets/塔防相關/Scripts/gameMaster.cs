@@ -13,6 +13,10 @@ public class gameMaster : MonoBehaviour
     public int 砲A上限 = 5;
     public int 砲B上限 = 5;
 
+    //------------- 吳沙救護生成點 -------------------
+    public GameObject 吳沙;
+
+
     //------------- 攻勢 -------------------
     public int 目前關卡 = 1;
     public float 每幾秒產生一波 = 10f;

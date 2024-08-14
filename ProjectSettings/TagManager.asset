@@ -15,6 +15,10 @@ TagManager:
   - "\u5676\u746A\u862D\u6B66\u5668"
   - "\u53EF\u90E8\u7F72"
   - "\u4E2D\u7E7C\u9EDE"
+  - "\u75C5\u6BD2"
+  - "\u6551\u63F4\u8005"
+  - "\u75C5\u6BD2\u6B66\u5668"
+  - "\u88AB\u6551\u63F4\u8005"
   layers:
   - Default
   - TransparentFX
@@ -22,7 +26,7 @@ TagManager:
   - "\u9810\u9632\u78B0\u649E"
   - Water
   - UI
-  - 
+  - "\u4EBA\u8207\u4EBA\u7684\u78B0\u649E"
   - 
   - 
   - 
