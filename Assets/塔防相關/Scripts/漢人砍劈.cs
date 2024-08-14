@@ -30,12 +30,15 @@ public class 漢人砍劈 : MonoBehaviour
     }
     public void 開始砍()
     {
-        GameObject go = Instantiate(劍氣,發射點.position, Quaternion.identity);
-        Destroy(go,2f);
-        go.transform.LookAt(目標.transform.position);
-        Vector3 dir = 目標.transform.position - go.transform.position;
-        go.GetComponent<Rigidbody>().velocity = dir * 10f;
-        vfx.SendEvent("OnPlay");
+        if (目標 != null)
+        {
+            GameObject go = Instantiate(劍氣, 發射點.position, Quaternion.identity);
+            Destroy(go, 2f);
+            go.transform.LookAt(目標.transform.position);
+            Vector3 dir = 目標.transform.position - go.transform.position;
+            go.GetComponent<Rigidbody>().velocity = dir * 10f;
+            vfx.SendEvent("OnPlay");
+        }
     }
 
     public void 砍完了()

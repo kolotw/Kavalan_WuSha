@@ -5,6 +5,7 @@ using UnityEngine;
 public class deploy : MonoBehaviour
 {
     GameObject[] 砲台 = new GameObject[2];
+    GameObject 吳沙;
     Vector3 newPos;
 
     // Start is called before the first frame update
@@ -12,6 +13,7 @@ public class deploy : MonoBehaviour
     {
         砲台[0] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().砲台[0];
         砲台[1] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().砲台[1];
+        吳沙 = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().吳沙;
     }
 
     // Update is called once per frame
@@ -33,7 +35,17 @@ public class deploy : MonoBehaviour
                     {//部署 砲台A 滑鼠左 
                         newPos = hit.transform.position;
                         newPos.y += 0.15f;
-                        Instantiate(砲台[0], newPos, Quaternion.identity);
+
+                        if (hit.transform.name == "吳沙救護生成點(可部署)")
+                        {
+                            Instantiate(吳沙, newPos, Quaternion.identity);
+                        }
+                        else 
+                        {
+                            Instantiate(砲台[0], newPos, Quaternion.identity);
+                        }
+
+                        
                         GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().砲A上限--;
                     }                    
                 }
