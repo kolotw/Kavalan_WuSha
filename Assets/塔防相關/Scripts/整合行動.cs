@@ -5,8 +5,6 @@ using UnityEngine.AI;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.UI;
 
-
-
 public enum OptionsA
 {
     攻方,
@@ -41,33 +39,32 @@ public class 整合行動 : MonoBehaviour
 
     //---------------------------------------------------
 
-    GameObject[] 敵人;
-    GameObject[] 中繼點;
+    private GameObject[] 敵人;
+    private GameObject[] 中繼點;
     public float 射程範圍 = 4f;
-    float 目前距離;
-    float 最短距離 = 2f;
-    public Transform 目標;
-    Vector3 dir;
-    Vector3 發射點RAY;
+    private float 目前距離;
+    private float 最短距離 = 50f;
+    public Transform 攻擊目標;
+    private Vector3 dir;
+    private Vector3 發射點RAY;
 
-    Quaternion 旋轉;
+    private Quaternion 旋轉;
 
-    bool 開火 = false;
+    private bool 開火 = false;
     public float 開火間距 = 2f;
-    float fireTime;
+    private float fireTime;
 
     public int hp = 10;
-    int OrigHP;
-    GameObject 血條;
-    Text 血量文字;
+    private int OrigHP;
+    private GameObject 血條;
+    private Text 血量文字;
 
-    //弓箭手
-    NavMeshAgent 導航;
-    Animator 動畫;
+    // 弓箭手
+    private NavMeshAgent 導航;
+    private Animator 動畫;
     public Rig rig;
     public Transform 最近敵人;
 
-    // Start is called before the first frame update
     void Start()
     {
         OrigHP = hp;
@@ -76,298 +73,246 @@ public class 整合行動 : MonoBehaviour
         血量文字 = transform.Find("Canvas/血量").gameObject.GetComponent<Text>();
         血量文字.text = hp.ToString();
         動畫 = GetComponent<Animator>();
-        
-        if(攻方或守方.ToString() != "守方")  // 攻方、救援者(也算是攻方)、被救援者(回家) 都會移動，只有守方不會移動
-        { 
-            //攻方
+
+        if (攻方或守方 != OptionsA.守方)  // 攻方、救援者(也算是攻方)、被救援者(回家) 都會移動，只有守方不會移動
+        {
             導航 = GetComponent<NavMeshAgent>();
-            搜目標();
+            搜索目標();
         }
-        if(this.tag == "漢人")
+
+        if (this.tag == "漢人" && rig != null)
         {
             rig.weight = 1;
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        switch(攻方或守方)
+        if (攻方或守方 == OptionsA.攻方)
         {
-            case OptionsA.攻方:
-                if (GameObject.Find("/target") == null)
-                {
-                    導航.SetDestination(this.transform.position);
-                    導航.isStopped = true;
-                    動畫.SetTrigger("WIN");
-                    return;
-                }
-
-                if (最近敵人 != null)
-                {
-                    if (最近敵人.tag == "被救援者")
-                    {
-                        最近敵人 = null;
-                    }
-                    if (Vector3.Distance(this.transform.position, 目標.transform.position) < 射程範圍)
-                    {
-                        動畫.SetBool("Run", false);
-                        導航.isStopped = true;
-                        this.transform.LookAt(最近敵人);
-                        this.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, 0);
-                        //開火間距
-                        if (Time.time > fireTime)
-                        {
-
-                            動畫.SetTrigger("FIRE");
-                            fireTime = Time.time + 開火間距;
-                        }
-                    }
-                }
-                else
-                {
-                    搜目標();
-                }
-                if ((目標.tag == "中繼點") || (目標.name == "target"))
-                {
-                    //動畫.SetBool("FIRE", false);
-                    if (Vector3.Distance(this.transform.position, 目標.position) < 0.4f)
-                    {
-                        Destroy(目標.gameObject);
-                    }
-
-                }
-                break;            
-            case OptionsA.守方:
-                找敵人();
-                if (敵人.Length == 0) return;
-                if (開火)
-                {
-                    if (Time.time > fireTime)
-                    {
-                        rig.weight = 1;
-                        動畫.SetTrigger("FIRE");
-                        fireTime = Time.time + 開火間距;
-                    }
-                }
-                break;
-            
-            default:
-                break;
+            處理攻方邏輯();
         }
-
-
-        
-    }
-    void 傳目標給角色()
-    {
-        if(this.tag == "病毒")
+        else if (攻方或守方 == OptionsA.守方)
         {
+            處理守方邏輯();
+        }
+    }
 
+    private void 處理攻方邏輯()
+    {
+        if (GameObject.Find("/target") == null)
+        {
+            導航.SetDestination(this.transform.position);
+            導航.isStopped = true;
+            動畫.SetTrigger("WIN");
             return;
         }
-        switch (目標敵人)
+
+        if (最近敵人 != null)
         {
-            case OptionsB.漢人:
-                if (目標 == null) return;
-                //將目標傳到射箭行為，讓角色可以看著目標。
-                if (transform.name == "噶瑪蘭-女火球(Clone)")
-                {
-                    GetComponent<噶瑪蘭_攻擊_巫術火球>().目標 = 目標;
-                }
-                else if (transform.name == "噶瑪蘭-男弓箭(Clone)")
-                {
-                    GetComponent<噶瑪蘭_攻擊_射箭>().目標 = 目標;
-                }
-                break;
-            case OptionsB.噶瑪蘭:
-                //將目標傳到射箭行為，讓角色可以看著目標。
-                if (this.transform.name == "漢人_農夫_鋤頭(Clone)")
-                {
-                    GetComponent<漢人砍劈>().目標 = 目標;
-                }
-                else if (this.transform.name == "漢人-弓箭手 F1(Clone)")
-                {
-                    GetComponent<漢人射箭>().目標 = 目標;
-                }
-
-
-                transform.Find("Rig 1/HeadAim").gameObject.GetComponent<MultiAimConstraint>().data.sourceObjects
-                    = new WeightedTransformArray { new WeightedTransform(目標, 1) };
-                break;
-            case OptionsB.救援者:
-                GetComponent<漢人砍劈>().目標.position = 目標.position;
-                transform.Find("Rig 1/HeadAim").gameObject.GetComponent<MultiAimConstraint>().data.sourceObjects
-                    = new WeightedTransformArray { new WeightedTransform(目標, 1) };
-                break;
-            case OptionsB.被救援者:
-                break;
-            case OptionsB.病毒:
-                break;
-            default:
-                break;
-        }
-
-        
-    }
-    void 搜目標()
-    {
-        //如果 場景內 有「中繼點」
-        //先去找 中繼點，刪除後，繼續找中繼點，直到沒有
-        //如果，敵人比較近，那先攻擊敵人
-        //再去找目標…
-        中繼點 = GameObject.FindGameObjectsWithTag("中繼點");
-
-        if (中繼點.Length == 0)
-        {
-            //如果中繼點沒了，還是要先找敵人？
-            if (找敵人() == 0)
+            if (最近敵人.tag == "被救援者")
             {
-                if (GameObject.Find("/target") != null)
-                {
-                    目標 = GameObject.Find("/target").transform;
-                }
+                最近敵人 = null;
+            }
+
+            if (攻擊目標 != null && Vector3.Distance(this.transform.position, 攻擊目標.position) < 射程範圍)
+            {
+                停止移動並攻擊();
             }
         }
         else
         {
-            int r = Random.Range(0, 中繼點.Length - 1);
-            目標 = 中繼點[r].transform;
+            最短距離 = 50f;
+            搜索目標();
         }
 
-        //這邊來找敵人吧！
-        找敵人();
-
-        導航.isStopped = false;
-        if (目標 != null)
+        if (攻擊目標 != null && (攻擊目標.tag == "中繼點" || 攻擊目標.name == "target"))
         {
-            導航.SetDestination(目標.position);
-            動畫.SetBool("Run", true);
-            傳目標給角色();
+            處理中繼點目標();
         }
-        
     }
-    int 找敵人()
+
+    private void 處理守方邏輯()
     {
-        //敵人 = GameObject.FindGameObjectsWithTag(目標敵人.ToString()); //漢人
-        GameObject[] 敵人 = GameObject.FindGameObjectsWithTag(目標敵人.ToString());
-        switch (攻方或守方)
+        if (敵人.Length == 0) return;
+
+        if (開火 && Time.time > fireTime)
         {
-            case OptionsA.攻方:
-                
-                if (敵人.Length == 0)
-                {
-                    if(rig!=null) rig.weight = 0;
-                    //動畫.SetTrigger("WIN");
-                    return 0;
-                }
-                最短距離 = 射程範圍;
-                foreach (GameObject e in 敵人)
-                {
-
-                    目前距離 = Vector3.Distance(this.transform.position, e.transform.position);
-                    if (目前距離 < 射程範圍)
-                    {
-                        if (目前距離 < 最短距離)
-                        {
-                            最近敵人 = e.transform;
-                            最短距離 = 目前距離;
-                            目標 = e.transform;
-                            傳目標給角色();
-                        }
-                    }
-                }
-                if (目標 != null)
-                {
-                    dir = this.transform.position - 目標.position;
-                    發射點RAY = new Vector3(
-                        this.transform.position.x, this.transform.position.y + 0.1f, this.transform.position.z);
-                    Debug.DrawRay(發射點RAY, dir * -1, Color.red);
-
-                    if (Vector3.Distance(this.transform.position, 目標.position) < 射程範圍)
-                    {
-                        開火 = true;
-                        if (dir != Vector3.zero)
-                        {
-                            旋轉 = Quaternion.LookRotation(dir * -1, Vector3.up);
-                            transform.rotation = Quaternion.Slerp(transform.rotation, 旋轉, 20 * Time.deltaTime);
-                            this.transform.eulerAngles = new Vector3(0f, this.transform.eulerAngles.y, 0f);
-                        }
-                    }
-                    else
-                    {
-                        開火 = false;
-                    }
-                }
-                else
-                {
-                    開火 = false;
-                }
-                return 敵人.Length;
-                //break;
-            
-            case OptionsA.守方:
-                float 目標距離 = 0;
-                if (目標 == null)
-                {
-                    目標距離 = 5;
-                }
-                else
-                {
-                    目標距離 = Vector3.Distance(this.transform.position, 目標.position);
-                }
-
-                
-                float dist;
-                foreach (GameObject t in 敵人)
-                {
-                    dist = Vector3.Distance(this.transform.position, t.transform.position);
-                    if (dist < 目標距離)
-                    {
-                        目標 = t.transform;
-                        最近敵人 = t.transform;
-
-                    }
-                }
-
-                return 敵人.Length;
-            //break;
-
-            
-            default:
-                return -1;
-                //break;
+            rig.weight = 1;
+            動畫.SetTrigger("FIRE");
+            fireTime = Time.time + 開火間距;
         }
-
-        
     }
-    private void OnTriggerEnter(Collider other)
+
+    private void 停止移動並攻擊()
     {
+        動畫.SetBool("Run", false);
+        導航.isStopped = true;
+        this.transform.LookAt(最近敵人);
+        this.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, 0);
+
+        if (Time.time > fireTime)
+        {
+            動畫.SetTrigger("FIRE");
+            fireTime = Time.time + 開火間距;
+        }
+    }
+
+    private void 處理中繼點目標()
+    {
+        if (Vector3.Distance(this.transform.position, 攻擊目標.position) < 0.4f)
+        {
+            Destroy(攻擊目標.gameObject);
+        }
+    }
+
+    private void 傳攻擊目標給角色()
+    {
+        if (this.tag == "病毒")
+        {
+            return;
+        }
+        print("傳攻擊目標給角色" + 攻擊目標.gameObject.name);
         switch (目標敵人)
         {
             case OptionsB.漢人:
-                if (other.tag == "漢人武器")
-                {
-                    減血(other.gameObject);
-                }
-                    break;
+                傳漢人目標();
+                break;
             case OptionsB.噶瑪蘭:
-                if (other.tag == "噶瑪蘭武器")
-                {
-                    減血(other.gameObject);
-                }
-                    break;
+                傳噶瑪蘭目標();
+                break;
             default:
                 break;
         }
     }
-    void 減血(GameObject tt)
+
+    private void 傳漢人目標()
+    {
+        if (攻擊目標 == null) return;
+
+        if (攻擊目標.transform.name == "噶瑪蘭-女火球(Clone)")
+        {
+            GetComponent<噶瑪蘭_攻擊_巫術火球>().目標 = 攻擊目標;
+        }
+        else if (攻擊目標.transform.name == "噶瑪蘭-男弓箭(Clone)")
+        {
+            GetComponent<噶瑪蘭_攻擊_射箭>().目標 = 攻擊目標;
+        }
+    }
+
+    private void 傳噶瑪蘭目標()
+    {
+        if (攻擊目標.transform.name == "漢人_農夫_鋤頭(Clone)")
+        {
+            print("HERE 農夫");
+            GetComponent<漢人砍劈>().目標 = 攻擊目標;
+        }
+        else if (攻擊目標.transform.name == "漢人-弓箭手 F1(Clone)")
+        {
+            print("HERE 弓箭手");
+            GetComponent<漢人射箭>().目標 = 攻擊目標;
+        }
+
+        var headAim = transform.Find("Rig 1/HeadAim").gameObject.GetComponent<MultiAimConstraint>();
+        headAim.data.sourceObjects = new WeightedTransformArray { new WeightedTransform(攻擊目標, 1) };
+    }
+
+    private void 傳給救援者目標()
+    {
+        GetComponent<漢人砍劈>().目標.position = 攻擊目標.position;
+
+        var headAim = transform.Find("Rig 1/HeadAim").gameObject.GetComponent<MultiAimConstraint>();
+        headAim.data.sourceObjects = new WeightedTransformArray { new WeightedTransform(攻擊目標, 1) };
+    }
+
+    private void 搜索目標()
+    {
+        // 先尋找所有中繼點
+        中繼點 = GameObject.FindGameObjectsWithTag("中繼點");
+
+        if (中繼點.Length > 0)
+        {
+            // 如果有中繼點，隨機選擇一個作為攻擊目標
+            int r = Random.Range(0, 中繼點.Length);
+            攻擊目標 = 中繼點[r].transform;
+        }
+        else
+        {
+            // 如果沒有中繼點，則尋找敵人
+            敵人 = GameObject.FindGameObjectsWithTag(目標敵人.ToString());
+
+            if (敵人.Length > 0)
+            {
+                最短距離 = 射程範圍;
+                foreach (GameObject e in 敵人)
+                {
+                    目前距離 = Vector3.Distance(this.transform.position, e.transform.position);
+                    if (目前距離 < 最短距離)
+                    {
+                        最近敵人 = e.transform;
+                        最短距離 = 目前距離;
+                        攻擊目標 = e.transform;
+                    }
+                }
+            }
+            else
+            {
+                // 如果既沒有中繼點也沒有敵人，且場景中存在“target”，將其設為目標
+                攻擊目標 = GameObject.Find("/target")?.transform;
+            }
+        }
+
+        // 如果找到了攻擊目標，設置導航目標並更新動畫狀態
+        if (攻擊目標 != null)
+        {
+            if (攻方或守方 == OptionsA.攻方)
+            {
+                導航.isStopped = false;
+                導航.SetDestination(攻擊目標.position);
+                動畫.SetBool("Run", true);
+            }
+
+            傳攻擊目標給角色();
+        }
+        else
+        {
+            if (攻方或守方 == OptionsA.攻方)
+            {
+                // 沒有找到目標時停止角色
+                導航.isStopped = true;
+                動畫.SetBool("Run", false);
+            }
+            搜索目標();
+        }
+    }
+
+
+    private void 旋轉至攻擊目標()
+    {
+        if (dir != Vector3.zero)
+        {
+            旋轉 = Quaternion.LookRotation(dir * -1, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, 旋轉, 20 * Time.deltaTime);
+            this.transform.eulerAngles = new Vector3(0f, this.transform.eulerAngles.y, 0f);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(會損血的武器.ToString()))
+        {
+            減血(other.gameObject);
+        }
+    }
+
+    private void 減血(GameObject tt)
     {
         Destroy(tt.gameObject);
         hp--;
         float 血量 = (float)hp / (float)OrigHP;
         血條.transform.localScale = new Vector3(血量, 1f, 1f);
         血量文字.text = hp.ToString();
+
         if (hp <= 0)
         {
             Destroy(this.gameObject);

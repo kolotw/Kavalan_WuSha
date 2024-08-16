@@ -1625,7 +1625,7 @@ GameObject:
   - component: {fileID: 3316248711434737329}
   - component: {fileID: 5143287609186373252}
   - component: {fileID: 9054941992761828955}
-  - component: {fileID: 7098425955798612957}
+  - component: {fileID: 4360869135216514235}
   m_Layer: 6
   m_Name: "\u6F22\u4EBA-\u5F13\u7BAD\u624B F1"
   m_TagString: "\u6F22\u4EBA"
@@ -1860,7 +1860,7 @@ MonoBehaviour:
   "\u767C\u5C04\u9EDE": {fileID: 794460728732627510}
   "\u76EE\u6A19": {fileID: 4923754055833199990}
   "\u5C04\u901F": 10
---- !u!114 &7098425955798612957
+--- !u!114 &4360869135216514235
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1869,19 +1869,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5111264895941581228}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bfa8b092e825124994bd64d7b8297f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 65a33971f68c3dc41be33b4d8e1b7782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\u653B\u65B9\u6216\u5B88\u65B9": 0
-  "\u76EE\u6A19\u6575\u4EBA": 1
-  "\u6703\u640D\u8840\u7684\u6B66\u5668": 1
-  "\u884C\u52D5\u76EE\u6A19": 0
-  "\u5C04\u7A0B\u7BC4\u570D": 4
-  "\u76EE\u6A19": {fileID: 0}
-  "\u958B\u706B\u9593\u8DDD": 2
+  "\u653B\u64CA\u76EE\u6A19": {fileID: 4923754055833199990}
   hp: 10
+  "\u5C04\u7A0B\u8DDD\u96E2": 5
+  "\u958B\u706B\u9593\u8DDD": 2
   rig: {fileID: 6995353582102738346}
-  "\u6700\u8FD1\u6575\u4EBA": {fileID: 0}
 --- !u!1 &5310472289611099388
 GameObject:
   m_ObjectHideFlags: 0

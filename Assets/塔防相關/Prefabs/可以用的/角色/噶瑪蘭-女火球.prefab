@@ -2877,8 +2877,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u5C04\u7A0B\u7BC4\u570D": 4
-  "\u706B\u529B\u9593\u9694": 2
-  hp: 10
+  "\u706B\u529B\u9593\u9694": 1.2
+  hp: 20
   rig: {fileID: 7628390708275170489}
 --- !u!114 &5994610199599250496
 MonoBehaviour:
