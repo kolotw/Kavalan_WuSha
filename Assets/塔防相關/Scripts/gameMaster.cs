@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class gameMaster : MonoBehaviour
 {
     //------------- 物件 -------------------
-    public GameObject[] 砲台 = new GameObject[2];
-    public GameObject[] 敵人 = new GameObject[2];
+    public GameObject[] 守方 = new GameObject[2];
+    public GameObject[] 攻方 = new GameObject[2];
 
     //------------- 資源上限 -------------------
     public int 砲A上限 = 5;
@@ -29,7 +29,7 @@ public class gameMaster : MonoBehaviour
     //------------- 產生敵人 -------------------
     GameObject[] 生成點;
     int 第幾個生成點;
-
+    GameObject 已生成敵人;
 
     //------------- UI TEXT -------------------
     public Text 攻勢文字; // 第幾關，第幾波，倒數… 勝敗訊息
@@ -39,7 +39,7 @@ public class gameMaster : MonoBehaviour
     bool 已熄火 = false;
 
     public GameObject 開始畫面;
-
+    public bool isWin = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +65,7 @@ public class gameMaster : MonoBehaviour
     void Update()
     {
         if (開始畫面.activeInHierarchy == true) return;
+        if (isWin) return;
 
         if (EndGame) {
             if(!已熄火)
@@ -94,9 +95,10 @@ public class gameMaster : MonoBehaviour
             else
             {
                 攻擊倒數 = 0;
-                if (GameObject.FindGameObjectsWithTag("漢人").Length == 0)
+                if (GameObject.FindGameObjectsWithTag("攻擊方").Length == 0)
                 {
                     攻勢文字.text = "你贏了";
+                    isWin = true;
                     EndGame = true;
                 }
             }
@@ -104,8 +106,9 @@ public class gameMaster : MonoBehaviour
     }
     void 生成敵人()
     {
-        int e = Random.Range(0, 敵人.Length);
-        Instantiate(敵人[e], 生成點[第幾個生成點].transform.position, Quaternion.identity);
+        int e = Random.Range(0, 攻方.Length);
+        已生成敵人 = Instantiate(攻方[e], 生成點[第幾個生成點].transform.position, Quaternion.identity);
+        已生成敵人.tag = "攻擊方";
     }
 
     IEnumerator 一波敵人()

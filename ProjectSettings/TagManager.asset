@@ -19,6 +19,10 @@ TagManager:
   - "\u6551\u63F4\u8005"
   - "\u75C5\u6BD2\u6B66\u5668"
   - "\u88AB\u6551\u63F4\u8005"
+  - "\u653B\u64CA\u65B9"
+  - "\u9632\u5B88\u65B9"
+  - "\u653B\u64CA\u65B9\u6B66\u5668"
+  - "\u9632\u5B88\u65B9\u6B66\u5668"
   layers:
   - Default
   - TransparentFX

@@ -28030,14 +28030,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.06666667
-    functionName: shootStart
+    functionName: "\u958B\u59CB\u5C04\u7BAD"
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.4
-    functionName: shootComplete
+    functionName: "\u5C04\u51FA\u7BAD"
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

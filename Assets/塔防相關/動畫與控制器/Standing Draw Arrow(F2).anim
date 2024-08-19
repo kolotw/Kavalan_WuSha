@@ -34516,13 +34516,6 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.73333335
-    functionName: "\u62C9\u5F13"
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 0.93333334
     functionName: "\u5C04\u51FA\u7BAD"
     data: 

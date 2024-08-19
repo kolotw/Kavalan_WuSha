@@ -14,7 +14,7 @@ public class 噶瑪蘭_攻擊_巫術火球 : MonoBehaviour
     bool 顯示火球 = false;
     public Transform 目標;
     public float 射速 = 10f;
-
+    public bool 是攻擊方 = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +37,14 @@ public class 噶瑪蘭_攻擊_巫術火球 : MonoBehaviour
     {
         //print("產生");
         火球 = Instantiate(火球源, 發射點.position,Quaternion.identity);
+        if (是攻擊方)
+        {
+            火球.tag = "攻擊方";
+        }
+        else
+        {
+            火球.tag = "防守方";
+        }
         Destroy(火球, 2f);
         顯示火球 = true;
     }

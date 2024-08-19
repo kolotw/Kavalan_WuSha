@@ -18,7 +18,7 @@ public class 噶瑪蘭_攻擊_射箭 : MonoBehaviour
     //控制箭的位置
     bool 顯示箭 = false;
     public float 射速 = 10f;
-
+    public bool 是攻擊方 = false;
     // Start is called before the first frame update
     void Start()
     {

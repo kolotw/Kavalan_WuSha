@@ -3631,7 +3631,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.05
+  m_VoxelSize: 0.06666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 8ad2d1bf4f42b9143835d6cfc88df545, type: 2}
   m_BuildHeightMesh: 0
@@ -5532,7 +5532,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 16999.973
+  m_Intensity: 50000
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5609,7 +5609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 16999.973
+  m_Intensity: 50000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -7410,6 +7410,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7632,6 +7633,28 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
+--- !u!114 &963194231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8cdc331fc7af8e45884059a3141974e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomSpeed: 2
+  minZoom: 2.5
+  maxZoom: 6
+  dragSpeed: 0.1
+  minX: -8
+  maxX: -1
+  minY: 2
+  maxY: 10
+  minZ: -1.8
+  maxZ: 15
 --- !u!1 &966448010
 GameObject:
   m_ObjectHideFlags: 0
@@ -9675,10 +9698,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9844f4a7950de8499d3424fb9b83573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\u7832\u53F0":
+  "\u5B88\u65B9":
   - {fileID: 3518558975092355882, guid: c9a633c982a38c94e96f8aebfab0a6f3, type: 3}
   - {fileID: 8926293936192623179, guid: 48aa185f42534ac4fbfeb6430ee29556, type: 3}
-  "\u6575\u4EBA":
+  "\u653B\u65B9":
   - {fileID: 5111264895941581228, guid: 229c5deb6dc38004bb60e2426c4cbad1, type: 3}
   - {fileID: 5168224026838959777, guid: d0e4010987d37344aa9fa018009bb153, type: 3}
   "\u7832A\u4E0A\u9650": 5
@@ -9693,6 +9716,7 @@ MonoBehaviour:
   "\u653B\u52E2\u6587\u5B57": {fileID: 62228255}
   "\u8CC7\u6E90\u6587\u5B57": {fileID: 449029484}
   "\u958B\u59CB\u756B\u9762": {fileID: 2125224920}
+  isWin: 0
 --- !u!4 &1268580729
 Transform:
   m_ObjectHideFlags: 0

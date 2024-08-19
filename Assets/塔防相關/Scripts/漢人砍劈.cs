@@ -10,7 +10,7 @@ public class 漢人砍劈 : MonoBehaviour
     public Transform 發射點;
     public VisualEffect vfx;
     public Transform 目標;
-
+    public bool 是攻擊方 = false;
     // Start is called before the first frame update
     void Start()
     {

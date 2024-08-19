@@ -1464,8 +1464,9 @@ GameObject:
   - component: {fileID: 4381888747510597349}
   - component: {fileID: 8339768496689998686}
   - component: {fileID: 4825660676927985605}
-  - component: {fileID: 7173680647301424702}
-  - component: {fileID: 8719865087537347778}
+  - component: {fileID: 3576918018420451967}
+  - component: {fileID: 5642097886309960552}
+  - component: {fileID: 8569144052942779203}
   m_Layer: 6
   m_Name: "\u5676\u746A\u862D-\u7537\u5F13\u7BAD"
   m_TagString: "\u5676\u746A\u862D"
@@ -1516,7 +1517,12 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'mixamorig:Head'\n\tTransform 'mixamorig:LeftArm'\n\tTransform
+    'mixamorig:RightHand'\n\tTransform 'mixamorig:LeftHandThumb1'\n\tTransform 'mixamorig:LeftForeArm'\n\tTransform
+    'mixamorig:RightForeArm'\n\tTransform 'mixamorig:Neck'\n\tTransform 'mixamorig:LeftHand'\n\tTransform
+    'mixamorig:Head'\n\tTransform 'mixamorig:LeftArm'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -1663,7 +1669,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &7173680647301424702
+--- !u!195 &3576918018420451967
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3518558975092355882}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.25
+  m_Speed: 3
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 300
+  m_StoppingDistance: 0.2
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &5642097886309960552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1672,14 +1700,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3518558975092355882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93f1c1d3eef85d545bfcf13afe3a2714, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a184b12680a943459bfe11cb6fb28a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\u5C04\u7A0B\u7BC4\u570D": 4
-  "\u706B\u529B\u9593\u9694": 1
-  hp: 10
-  rig: {fileID: 5199440878183210048}
---- !u!114 &8719865087537347778
+  "\u662F\u653B\u64CA\u65B9": 0
+  "\u5C04\u7A0B\u7BC4\u570D": 6
+  "\u505C\u6B62\u8DDD\u96E2": 6
+  "\u76EE\u6A19": {fileID: 0}
+  "\u706B\u529B\u9593\u9694": 1.5
+  hp: 30
+  rig: {fileID: 2523146337622156451}
+--- !u!114 &8569144052942779203
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1688,15 +1719,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3518558975092355882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4a972d147a8b9f4283221635b368ddf, type: 3}
+  m_Script: {fileID: 11500000, guid: a15c41819dcddf944840819ddd6c73e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\u76EE\u6A19": {fileID: 8720727463248299625}
-  rig: {fileID: 5199440878183210048}
-  "\u7BAD": {fileID: 2619013936880112338, guid: c4b295a3564a0b64cae632f0188e9543,
+  "\u662F\u653B\u64CA\u65B9": 0
+  "\u767C\u5C04\u6B66\u5668": {fileID: 2619013936880112338, guid: c4b295a3564a0b64cae632f0188e9543,
     type: 3}
-  "\u7BAD\u7684\u4F4D\u7F6E": {fileID: 689894671272446842}
+  "\u767C\u5C04\u9EDE": {fileID: 8496870341173142625}
+  vfx: {fileID: 0}
+  "\u76EE\u6A19": {fileID: 8720727463248299625}
   "\u5C04\u901F": 10
+  rig: {fileID: 5199440878183210048}
 --- !u!1 &3593567824244864894
 GameObject:
   m_ObjectHideFlags: 0

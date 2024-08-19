@@ -7,12 +7,13 @@ public class deploy : MonoBehaviour
     GameObject[]  = new GameObject[2];
     GameObject ‵;
     Vector3 newPos;
+    GameObject 场竝;
 
     // Start is called before the first frame update
     void Start()
     {
-        [0] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().[0];
-        [1] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().[1];
+        [0] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().よ[0];
+        [1] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().よ[1];
         ‵ = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().‵;
     }
 
@@ -38,11 +39,13 @@ public class deploy : MonoBehaviour
 
                         if (hit.transform.name == "‵毕臔ネΘ翴(场竝)")
                         {
-                            Instantiate(‵, newPos, Quaternion.identity);
+                            场竝 = Instantiate(‵, newPos, Quaternion.identity);
+                            场竝.tag = "ňよ";
                         }
                         else 
                         {
-                            Instantiate([0], newPos, Quaternion.identity);
+                            场竝 = Instantiate([0], newPos, Quaternion.identity);
+                            场竝.tag = "ňよ";
                         }
 
                         
@@ -56,7 +59,8 @@ public class deploy : MonoBehaviour
                         //场竝 B 菲公
                         newPos = hit.transform.position;
                         newPos.y += 0.15f;
-                        Instantiate([1], newPos, Quaternion.identity);
+                        场竝 = Instantiate([1], newPos, Quaternion.identity);
+                        场竝.tag = "ňよ";
                         GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().B--;
                     }                    
                 }

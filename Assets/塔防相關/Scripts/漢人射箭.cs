@@ -11,7 +11,7 @@ public class 漢人射箭 : MonoBehaviour
     GameObject 射出的箭;
     public Transform 目標;
     public float 射速 = 10f;
-
+    public bool 是攻擊方 = false;
     // Start is called before the first frame update
     void Start()
     {
