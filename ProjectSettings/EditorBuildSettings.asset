@@ -4,5 +4,47 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: "Assets/EBook/Scenes/\u6A6B\u66F8/Menu.unity"
+    guid: 83be0b1579056e243b15d2e13a0f2ba0
+  - enabled: 1
+    path: "Assets/EBook/Scenes/\u6A6B\u66F8/Chapter1.unity"
+    guid: 5531b68a9ef156f4899b26eece7d766a
+  - enabled: 1
+    path: "Assets/EBook/Scenes/\u6A6B\u66F8/Chapter2.unity"
+    guid: 5523a0ded455bc14fbea4691e9393d56
+  - enabled: 1
+    path: "Assets/EBook/Scenes/\u6A6B\u66F8/Chapter3.unity"
+    guid: c2dc627dbf4998f469f7f575f1f6ed84
+  - enabled: 1
+    path: "Assets/EBook/Scenes/\u6A6B\u66F8/Chapter4.unity"
+    guid: 099d1b44f51a0ac468ce108fce2c749b
+  - enabled: 1
+    path: "Assets/EBook/Scenes/\u6A6B\u66F8/Chapter5.unity"
+    guid: d71d44b67ce2d93499a40da0c1f9291c
+  - enabled: 1
+    path: "Assets/EBook/Scenes/\u6A6B\u66F8/Chapter6.unity"
+    guid: b4fdb83ed53922b4db346a84dc882e35
+  - enabled: 1
+    path: "Assets/EBook/Scenes/\u6A6B\u66F8/Chapter7.unity"
+    guid: b834af60062aa384cb573650261eb2d2
+  - enabled: 1
+    path: "Assets/EBook/Scenes/\u6A6B\u66F8/Chapter8.unity"
+    guid: 7e25611ecf6904543a030b299aef25b2
+  - enabled: 1
+    path: "Assets/EBook/Scenes/\u6A6B\u66F8/Chapter9.unity"
+    guid: 699722c0708fe6a4bab3bf343fcec4d9
+  - enabled: 1
+    path: "Assets/EBook/Scenes/\u76F4\u66F8/Chapter1.unity"
+    guid: cf147dadc0859724791b762da21c40fd
+  - enabled: 1
+    path: "Assets/EBook/Scenes/\u76F4\u66F8/Chapter2.unity"
+    guid: 42f906f9ba2e16641b3500e00e6aa53c
+  - enabled: 1
+    path: "Assets/EBook/Scenes/\u76F4\u66F8/Chapter3.unity"
+    guid: 293f2188f4cf5494e8e63f208187bd89
+  - enabled: 1
+    path: "Assets/EBook/Scenes/\u76F4\u66F8/Chapter4.unity"
+    guid: 94ec8c2196bc2a7429c4277e52cd8290
   m_configObjects: {}
