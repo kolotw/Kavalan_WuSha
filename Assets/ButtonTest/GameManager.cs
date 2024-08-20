@@ -19,5 +19,24 @@ public class GameManager : MonoBehaviour
     {
         print("hello");
     }
-  
+    public void button2()
+    {
+        
+    }
+    public void button3()
+    {
+
+    }
+    public void button4()
+    {
+
+    }
+    public void button5()
+    {
+
+    }
+    public void button6() { }
+    public void button7() { }
+    public void button8() { }
+    public void button9() { }
 }

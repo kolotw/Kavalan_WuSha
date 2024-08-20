@@ -1,38 +1,47 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class IconScaler : MonoBehaviour
 {
-    public Camera mainCamera; // ¥DÄá¹³¾÷
-    public Transform[] iconTransforms; // icon ªº Transform
-    public bool[] isInverseTransparency; // ¬O§_¬O¤Ï¦V³z©ú«×
+    public Camera mainCamera; // ä¸»æ”åƒæ©Ÿ
+    public Transform[] æ”¾å¤§æœƒé¡¯ç¤º; // æ­£å‘é€æ˜åº¦ icon çš„ Transform
+    public Transform[] æ”¾å¤§æœƒæ¶ˆå¤±; // åå‘é€æ˜åº¦ icon çš„ Transform
 
-    private float initialSize; // ªì©l Camera orthographic size
-    private Vector3[] initialScales; // ªì©l icon scale
+    private float initialSize; // åˆå§‹ Camera orthographic size
+    private Vector3[] initialScalesForward; // æ­£å‘é€æ˜åº¦ icon åˆå§‹ scale
+    private Vector3[] initialScalesInverse; // åå‘é€æ˜åº¦ icon åˆå§‹ scale
 
-    //--- ºu½üÁY©ñ ---
-    public float zoomSpeed = 1.5f; // ÁY©ñ³t«×
-    public float minZoom = 1f; // ³Ì¤pÁY©ñ
-    public float maxZoom = 10f; // ³Ì¤jÁY©ñ
+    //--- æ»¾è¼ªç¸®æ”¾ ---
+    public float zoomSpeed = 1.5f; // ç¸®æ”¾é€Ÿåº¦
+    public float minZoom = 1f; // æœ€å°ç¸®æ”¾
+    public float maxZoom = 10f; // æœ€å¤§ç¸®æ”¾
 
-    //--- ·Æ¹«©ì¦² ²¾°Ê¦a¹Ï ---
-    private Vector3 dragOrigin; // ©ì¦²°_©lÂI
-    private bool isDragging = false; // ¬O§_¥¿¦b©ì¦²
+    //--- æ»‘é¼ æ‹–æ›³ ç§»å‹•åœ°åœ– ---
+    private Vector3 dragOrigin; // æ‹–æ›³èµ·å§‹é»
+    private bool isDragging = false; // æ˜¯å¦æ­£åœ¨æ‹–æ›³
 
-    // ¦a¹ÏÃä¬É
+    // åœ°åœ–é‚Šç•Œ
     public float minX = -4.2f;
     public float maxX = 7f;
     public float minY = -2.5f;
-    public float maxY = 9f; 
+    public float maxY = 9f;
+
     void Start()
     {
         mainCamera = Camera.main;
         initialSize = mainCamera.orthographicSize;
 
-        // °O¿ı¨C­Ó icon ªºªì©l scale
-        initialScales = new Vector3[iconTransforms.Length];
-        for (int i = 0; i < iconTransforms.Length; i++)
+        // è¨˜éŒ„æ¯å€‹ icon çš„åˆå§‹ scale
+        initialScalesForward = new Vector3[æ”¾å¤§æœƒé¡¯ç¤º.Length];
+        initialScalesInverse = new Vector3[æ”¾å¤§æœƒæ¶ˆå¤±.Length];
+
+        for (int i = 0; i < æ”¾å¤§æœƒé¡¯ç¤º.Length; i++)
         {
-            initialScales[i] = iconTransforms[i].localScale;
+            initialScalesForward[i] = æ”¾å¤§æœƒé¡¯ç¤º[i].localScale;
+        }
+
+        for (int i = 0; i < æ”¾å¤§æœƒæ¶ˆå¤±.Length; i++)
+        {
+            initialScalesInverse[i] = æ”¾å¤§æœƒæ¶ˆå¤±[i].localScale;
         }
     }
 
@@ -45,27 +54,27 @@ public class IconScaler : MonoBehaviour
 
     void HandleMouseDrag()
     {
-        // ¦pªG«ö¤U·Æ¹«¥ªÁä
         if (Input.GetMouseButtonDown(0))
         {
-            dragOrigin = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 origin = Input.mousePosition;
+            origin.z = -mainCamera.transform.position.z; // ç¡®ä¿ z åæ ‡æ­£ç¡®
+            dragOrigin = mainCamera.ScreenToWorldPoint(origin);
             isDragging = true;
         }
 
-        // ¦pªG©ñ¶}·Æ¹«¥ªÁä
         if (Input.GetMouseButtonUp(0))
         {
             isDragging = false;
         }
 
-        // ¦pªG¥¿¦b©ì¦²
         if (isDragging)
         {
-            Vector3 currentMousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 difference = dragOrigin - currentMousePosition;
+            Vector3 currentMousePosition = Input.mousePosition;
+            currentMousePosition.z = -mainCamera.transform.position.z; // ç¡®ä¿ z åæ ‡æ­£ç¡®
+            Vector3 currentWorldPosition = mainCamera.ScreenToWorldPoint(currentMousePosition);
+            Vector3 difference = dragOrigin - currentWorldPosition;
             Vector3 newPosition = mainCamera.transform.position + difference;
 
-            // ­­¨î¬Û¾÷ªº²¾°Ê½d³ò
             newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
             newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
 
@@ -75,42 +84,39 @@ public class IconScaler : MonoBehaviour
 
     void HandleZoom()
     {
-        // Àò¨úºu½ü¿é¤J
         float scroll = Input.GetAxis("Mouse ScrollWheel");
-
-        // ­pºâ·sªº orthographicSize
         float newSize = mainCamera.orthographicSize - scroll * zoomSpeed;
-
-        // ­­¨î·sªº orthographicSize ¦b minZoom ©M maxZoom ½d³ò¤º
         newSize = Mathf.Clamp(newSize, minZoom, maxZoom);
-
-        // ³]¸m·sªº orthographicSize
         mainCamera.orthographicSize = newSize;
     }
 
     void UpdateIconScaleAndTransparency()
     {
-        // ­pºâ¤ñ¨Ò
         float scaleRatio = mainCamera.orthographicSize / initialSize;
 
-        for (int i = 0; i < iconTransforms.Length; i++)
-        {
-            // ®Ú¾Ú¤ñ¨ÒÁY©ñ icon¡A¨Ã­­¨îÁY©ñ½d³ò
-            float clampedScale = Mathf.Clamp(initialScales[i].x * scaleRatio, 0.6f, 1f);
-            iconTransforms[i].localScale = new Vector3(clampedScale, clampedScale, clampedScale);
+        // æ›´æ–°æ­£å‘é€æ˜åº¦ icon
+        UpdateIconGroup(æ”¾å¤§æœƒé¡¯ç¤º, initialScalesForward, scaleRatio, false);
 
-            // ­pºâ³z©ú«×
+        // æ›´æ–°åå‘é€æ˜åº¦ icon
+        UpdateIconGroup(æ”¾å¤§æœƒæ¶ˆå¤±, initialScalesInverse, scaleRatio, true);
+    }
+
+    void UpdateIconGroup(Transform[] iconGroup, Vector3[] initialScales, float scaleRatio, bool isInverse)
+    {
+        for (int i = 0; i < iconGroup.Length; i++)
+        {
+            float clampedScale = Mathf.Clamp(initialScales[i].x * scaleRatio, 0.6f, 1f);
+            iconGroup[i].localScale = new Vector3(clampedScale, clampedScale, clampedScale);
+
             float t = (mainCamera.orthographicSize - minZoom) / (maxZoom - minZoom);
             float alpha = Mathf.Lerp(1f, 0f, t);
 
-            // ®Ú¾Ú isInverseTransparency ¼Ğ»x³]¸m³z©ú«×
-            if (isInverseTransparency[i])
+            if (isInverse)
             {
                 alpha = 1f - alpha;
             }
 
-            // ³]¸m icon ªº³z©ú«×
-            SpriteRenderer spriteRenderer = iconTransforms[i].GetComponent<SpriteRenderer>();
+            SpriteRenderer spriteRenderer = iconGroup[i].GetComponent<SpriteRenderer>();
             if (spriteRenderer != null)
             {
                 Color color = spriteRenderer.color;
