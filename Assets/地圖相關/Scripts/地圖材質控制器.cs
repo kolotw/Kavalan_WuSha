@@ -11,11 +11,8 @@ public class 地圖材質控制器 : MonoBehaviour
     private int currentOrderIndex = 0; // 追蹤當前需要使用的順序索引
     private TerrainLayer[] originalLayers; // 保存原始圖層順序
 
-    public float 切換秒數 = 3f;
-    float nowTime;
     void Start()
     {
-        nowTime = Time.time;
         if (newOrder == null || newOrder.Length == 0)
         {
             Debug.LogError("請設置 newOrder 順序！");
@@ -31,12 +28,6 @@ public class 地圖材質控制器 : MonoBehaviour
 
     void Update()
     {
-        if (Time.time > nowTime + 切換秒數) 
-        {
-            nowTime = Time.time;
-            currentOrderIndex = (currentOrderIndex + 1) % newOrder.Length;
-            MoveLayerToTop(newOrder[currentOrderIndex]);
-        }
         // 這裡可以設置一個定時器或其他條件來定期觸發更新
         if (Input.GetKeyDown(KeyCode.Space)) // 例如按下 U 鍵
         {
