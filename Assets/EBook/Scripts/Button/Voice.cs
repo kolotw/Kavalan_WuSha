@@ -4,27 +4,25 @@ using UnityEngine;
 
 public class Voice : MonoBehaviour
 {
-    public AudioClip Audio;
-    AudioSource AS;
+    public GameObject PlayButton;
+    public GameObject PauseButton;
+
     void Start()
     {
-        AS = GetComponent<AudioSource>();
+
     }
     void Update()
     {
         
     }
-    public void AudioPlay()
+    public void ClosePlayButton()
     {
-        AS.Play();
+        PauseButton.SetActive(true);
+        PlayButton.SetActive(false);
     }
-    public void AudioPause()
+    public void ClosePauseButton()
     {
-        AS.Pause();
+        PlayButton.SetActive(true);
+        PauseButton.SetActive(false);
     }
-    public void AudioStop()
-    {
-        AS.Stop();
-    }
-
 }
