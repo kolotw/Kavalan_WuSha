@@ -31,6 +31,7 @@ public class 被救的人的行為 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(target == null) return;
         float dist = Vector3.Distance(this.transform.position, target.transform.position);
         if(dist < 1)
             Destroy(this.gameObject);
