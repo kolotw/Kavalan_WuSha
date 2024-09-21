@@ -10974,7 +10974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "\u5B88\u65B9":
   - {fileID: 8926293936192623179, guid: 48aa185f42534ac4fbfeb6430ee29556, type: 3}
-  - {fileID: 3518558975092355882, guid: c9a633c982a38c94e96f8aebfab0a6f3, type: 3}
+  - {fileID: 167516268078109821, guid: ea58cc109fb5712468851df779622267, type: 3}
   "\u653B\u65B9":
   - {fileID: 5111264895941581228, guid: 229c5deb6dc38004bb60e2426c4cbad1, type: 3}
   - {fileID: 5168224026838959777, guid: d0e4010987d37344aa9fa018009bb153, type: 3}
@@ -14635,7 +14635,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1674245338
 MonoBehaviour:
   m_ObjectHideFlags: 0

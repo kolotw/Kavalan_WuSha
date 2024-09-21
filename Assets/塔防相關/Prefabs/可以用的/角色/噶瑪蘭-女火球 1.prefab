@@ -2732,7 +2732,7 @@ GameObject:
   - component: {fileID: 7229765552784124264}
   - component: {fileID: -3264204579503500511}
   m_Layer: 6
-  m_Name: "\u5676\u746A\u862D-\u5973\u706B\u7403"
+  m_Name: "\u5676\u746A\u862D-\u5973\u706B\u7403 1"
   m_TagString: "\u5676\u746A\u862D"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -271,6 +271,8 @@ public class 整合角色行動 : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         string 武器標籤 = 是攻擊方 ? "防守方武器" : "攻擊方武器";
+        
+        print(this.name + 武器標籤);
 
         if (other.CompareTag(武器標籤))
         {
