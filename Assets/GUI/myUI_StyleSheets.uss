@@ -1,0 +1,27 @@
+.button-kavalan {
+    background-image: url("project://database/Assets/%E5%A1%94%E9%98%B2%E7%9B%B8%E9%97%9C/%E8%B3%87%E6%BA%90%E5%8C%85/%E8%A7%92%E8%89%B2%E5%9C%96%E7%A4%BA/%E8%A7%92%E8%89%B2%E5%9C%96%E7%A4%BA-%E5%99%B6-%E5%A5%B3%E4%B8%80.png?fileID=2800000&guid=0290917e90c03b444b629844e3453447&type=3#角色圖示-噶-女一");
+    background-color: rgba(212, 212, 212, 0.09);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    font-size: 30px;
+    min-width: 122px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out-elastic;
+}
+
+.button-kavalan:hover {
+    scale: 1.1 1.1;
+    rotate: 5deg;
+}
+
+.button-kavalan:active {
+    scale: 0.9 0.9;
+    background-color: rgb(255, 0, 0);
+}
