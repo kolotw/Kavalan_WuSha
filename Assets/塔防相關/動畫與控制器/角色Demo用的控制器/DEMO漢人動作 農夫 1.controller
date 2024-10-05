@@ -72,9 +72,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25000024
-  m_TransitionOffset: 0.016810719
-  m_ExitTime: 2.6563644
+  m_TransitionDuration: 0.25000048
+  m_TransitionOffset: 0.15701814
+  m_ExitTime: 1.4444007
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -234,13 +234,13 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 1.1926116
-  m_TransitionOffset: 0
-  m_ExitTime: 0.77628875
+  m_TransitionDuration: 0.19701672
+  m_TransitionOffset: 0.48878583
+  m_ExitTime: 2.7837386
   m_HasExitTime: 1
-  m_HasFixedDuration: 0
-  m_InterruptionSource: 1
-  m_OrderedInterruption: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 --- !u!1102 &8684598775178658457
 AnimatorState:
@@ -251,7 +251,7 @@ AnimatorState:
   m_PrefabAsset: {fileID: 0}
   m_Name: 2Hand-Sword-Attack1
   m_Speed: 1
-  m_CycleOffset: 0
+  m_CycleOffset: 1
   m_Transitions:
   - {fileID: 6898651502825672314}
   m_StateMachineBehaviours: []
