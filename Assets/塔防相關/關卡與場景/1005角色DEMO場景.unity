@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &1871513 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2677581250369080235, guid: 2b855461f78101a479a0696e91848710,
+    type: 3}
+  m_PrefabInstance: {fileID: 2858844118524106693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &140582583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,6 +1711,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1505712321072135082, guid: 2b855461f78101a479a0696e91848710,
+        type: 3}
+      propertyPath: m_Weight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4264254398696605641, guid: 2b855461f78101a479a0696e91848710,
+        type: 3}
+      propertyPath: m_Data.m_SourceObjects.m_Item0.transform
+      value: 
+      objectReference: {fileID: 1871513}
     - target: {fileID: 4834205738879349722, guid: 2b855461f78101a479a0696e91848710,
         type: 3}
       propertyPath: m_Name
@@ -1788,6 +1804,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u6F22\u4EBA_\u5973(\u88AB\u6551\u63F4\u8005)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2488038831997914967, guid: 8456da9c2ed409842aa2154338cb33e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3011952186187666925, guid: 8456da9c2ed409842aa2154338cb33e2,
         type: 3}
@@ -1906,11 +1927,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u5676\u746A\u862D-\u5973\u706B\u7403 1 (\u7BC4\u672C)"
-      objectReference: {fileID: 0}
-    - target: {fileID: 3106820949459854008, guid: 7096d35c4b53b674b83d7dc5cf166999,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3168873832168538424, guid: 7096d35c4b53b674b83d7dc5cf166999,
         type: 3}
