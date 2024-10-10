@@ -1122,7 +1122,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 17.3
+  field of view: 12
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1168,7 +1168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clearColorMode: 1
-  backgroundColorHDR: {r: 0, g: 0, b: 0, a: 0}
+  backgroundColorHDR: {r: 0, g: 0.131908, b: 0.5849056, a: 0}
   clearDepth: 1
   volumeLayerMask:
     serializedVersion: 2
@@ -1928,6 +1928,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u5676\u746A\u862D-\u5973\u706B\u7403 1 (\u7BC4\u672C)"
       objectReference: {fileID: 0}
+    - target: {fileID: 3106820949459854008, guid: 7096d35c4b53b674b83d7dc5cf166999,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3168873832168538424, guid: 7096d35c4b53b674b83d7dc5cf166999,
         type: 3}
       propertyPath: m_Data.m_SourceObjects.m_Item0.transform
@@ -1959,7 +1964,7 @@ PrefabInstance:
     - target: {fileID: 2055114597521625477, guid: b98a14a86ccd2304ca2b2f70c2f81bae,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4070766679631136453, guid: b98a14a86ccd2304ca2b2f70c2f81bae,
         type: 3}
@@ -2024,7 +2029,7 @@ PrefabInstance:
     - target: {fileID: 6634848477981804406, guid: b98a14a86ccd2304ca2b2f70c2f81bae,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7479104647468492673, guid: b98a14a86ccd2304ca2b2f70c2f81bae,
         type: 3}
