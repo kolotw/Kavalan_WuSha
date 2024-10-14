@@ -14,6 +14,7 @@
     border-left-width: 0;
     transition-duration: 0.1s;
     transition-timing-function: ease-out-elastic;
+    -unity-font: initial;
 }
 
 .button-kavalan:hover {
@@ -24,4 +25,19 @@
 .button-kavalan:active {
     scale: 0.9 0.9;
     background-color: rgb(255, 0, 0);
+}
+
+.label_leftNumber {
+    -unity-text-align: lower-center;
+    align-self: stretch;
+    align-items: auto;
+    justify-content: flex-start;
+    -unity-text-outline-width: 2px;
+    -unity-text-outline-color: rgb(255, 255, 255);
+    color: rgb(72, 72, 72);
+    margin-bottom: 0;
+    padding-bottom: 0;
+    -unity-font: url("project://database/Assets/%E5%9C%B0%E5%9C%96%E7%9B%B8%E9%97%9C/Text/MSJH.TTC?fileID=12800000&guid=901a5cb4047416247b8cf4bf765a000f&type=3#MSJH");
+    -unity-font-style: bold;
+    font-size: 70px;
 }

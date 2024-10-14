@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class gameMaster : MonoBehaviour
 {
     //------------- 物件 -------------------
-    public GameObject[] 守方 = new GameObject[2];
-    public GameObject[] 攻方 = new GameObject[2];
+    public GameObject[] 守方 = new GameObject[3];
+    public GameObject[] 攻方 = new GameObject[3];
 
     //------------- 資源上限 -------------------
     public int 砲A上限 = 5;
     public int 砲B上限 = 5;
+    public int 砲C上限 = 5;
 
     //------------- 吳沙救護生成點 -------------------
     public GameObject 吳沙;
@@ -40,11 +41,20 @@ public class gameMaster : MonoBehaviour
 
     public GameObject 開始畫面;
     public bool isWin = false;
+    public bool startGame = false;
+
+    //GUI
+    public GUI控制器 gUI;
+    public int 角色=0;
     // Start is called before the first frame update
     void Start()
     {
         生成點 = GameObject.FindGameObjectsWithTag("生成點");
         攻擊倒數 = 每幾秒產生一波;
+        if (gUI != null)
+        {
+            gUI.myLabel.text = string.Empty;
+        }
         
     }
     void 熄火() {
@@ -64,8 +74,11 @@ public class gameMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (開始畫面.activeInHierarchy == true) return;
-        if (isWin) return;
+        if (startGame == false) return;
+        if (isWin) { 
+            gUI.result(true);
+            return; 
+        }
 
         if (EndGame) {
             if(!已熄火)
@@ -76,12 +89,18 @@ public class gameMaster : MonoBehaviour
         {
             攻勢文字.text = "你輸了";
             EndGame = true;
+            gUI.result(false);
         }
         else
         {
             攻勢文字.text = "第" + 目前關卡.ToString() + "關 第" + 目前第幾波攻勢.ToString()
                + "波攻勢 還有" + Mathf.RoundToInt(攻擊倒數).ToString() + "秒";
             資源文字.text = "資源：\n砲台A：" + 砲A上限.ToString() + "\n砲台B：" + 砲B上限.ToString();
+            
+            gUI.myLabel.text = 攻勢文字.text;
+            gUI.leftA.text = 砲A上限.ToString();
+            gUI.leftB.text = 砲B上限.ToString();
+            gUI.leftC.text = 砲C上限.ToString();
 
             if (目前第幾波攻勢 <= 攻勢上限)
             {
