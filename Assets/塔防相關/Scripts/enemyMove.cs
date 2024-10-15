@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -7,24 +7,24 @@ using UnityEngine.UI;
 
 public class enemyMove : MonoBehaviour
 {
-    NavMeshAgent ¥N²z¤H;
-    public Transform ¥Ø¼Ğ;
-    GameObject[] ¤¤Ä~ÂI;
+    NavMeshAgent ä»£ç†äºº;
+    public Transform ç›®æ¨™;
+    GameObject[] ä¸­ç¹¼é»;
 
     public int hp = 10;
 
-    public float ®gµ{¶ZÂ÷ = 2f;
-    float ¤}½b¤â¶ZÂ÷ = 2f;
-    public Transform ³Ìªñ¤}½b¤â;
-    Animator °Êµe;
+    public float å°„ç¨‹è·é›¢ = 2f;
+    float å¼“ç®­æ‰‹è·é›¢ = 2f;
+    public Transform æœ€è¿‘å¼“ç®­æ‰‹;
+    Animator å‹•ç•«;
 
-    public Transform µo®gÂI;
-    public GameObject ¤l¼u;
-    public float ¶}¤õ¶¡¶Z = 0.3f;
+    public Transform ç™¼å°„é»;
+    public GameObject å­å½ˆ;
+    public float é–‹ç«é–“è· = 0.3f;
     float fireTime;
 
-    Text ¦å¶q;
-    GameObject ¦å±ø;
+    Text è¡€é‡;
+    GameObject è¡€æ¢;
     int OriHP;
 
     public Rig rig;
@@ -32,30 +32,30 @@ public class enemyMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ¦å¶q = transform.Find("Canvas/¦å¶q").gameObject.GetComponent<Text>();
-        ¦å¶q.text = hp.ToString();
-        ¦å±ø = transform.Find("Canvas/¦å±ø").gameObject;
+        è¡€é‡ = transform.Find("Canvas/è¡€é‡").gameObject.GetComponent<Text>();
+        è¡€é‡.text = hp.ToString();
+        è¡€æ¢ = transform.Find("Canvas/è¡€æ¢").gameObject;
         OriHP = hp;
         rig.weight = 0;
 
-        fireTime = ¶}¤õ¶¡¶Z;
-        °Êµe = GetComponent<Animator>();
-        ¥N²z¤H = GetComponent<NavMeshAgent>();
-        ·j¥Ø¼Ğ();
+        fireTime = é–‹ç«é–“è·;
+        å‹•ç•« = GetComponent<Animator>();
+        ä»£ç†äºº = GetComponent<NavMeshAgent>();
+        æœç›®æ¨™();
 
     }
-    void ·j¥Ø¼Ğ() {
-        //¦pªG ³õ´º¤º ¦³¡u¤¤Ä~ÂI¡v
-        //¥ı¥h§ä ¤¤Ä~ÂI¡A§R°£«á¡AÄ~Äò§ä¤¤Ä~ÂI¡Aª½¨ì¨S¦³
-        //¦pªG¡A¤}½b¤â¤ñ¸ûªñ¡A¨º¥ı§ğÀ»¤}½b¤â
-        //¦A¥h§ä¥Ø¼Ğ¡K
+    void æœç›®æ¨™() {
+        //å¦‚æœ å ´æ™¯å…§ æœ‰ã€Œä¸­ç¹¼é»ã€
+        //å…ˆå»æ‰¾ ä¸­ç¹¼é»ï¼Œåˆªé™¤å¾Œï¼Œç¹¼çºŒæ‰¾ä¸­ç¹¼é»ï¼Œç›´åˆ°æ²’æœ‰
+        //å¦‚æœï¼Œå¼“ç®­æ‰‹æ¯”è¼ƒè¿‘ï¼Œé‚£å…ˆæ”»æ“Šå¼“ç®­æ‰‹
+        //å†å»æ‰¾ç›®æ¨™â€¦
         
-        ¤¤Ä~ÂI = GameObject.FindGameObjectsWithTag("¤¤Ä~ÂI");
-        if (¤¤Ä~ÂI.Length == 0)
+        ä¸­ç¹¼é» = GameObject.FindGameObjectsWithTag("ä¸­ç¹¼é»");
+        if (ä¸­ç¹¼é».Length == 0)
         {
             if(GameObject.Find("/target") != null)
             {
-                ¥Ø¼Ğ = GameObject.Find("/target").transform;
+                ç›®æ¨™ = GameObject.Find("/target").transform;
             }
             else
             {
@@ -65,45 +65,45 @@ public class enemyMove : MonoBehaviour
         }
         else
         {
-            int r = Random.Range(0, ¤¤Ä~ÂI.Length - 1);
-            ¥Ø¼Ğ = ¤¤Ä~ÂI[r].transform;
+            int r = Random.Range(0, ä¸­ç¹¼é».Length - 1);
+            ç›®æ¨™ = ä¸­ç¹¼é»[r].transform;
         }
-        ¥N²z¤H.SetDestination(¥Ø¼Ğ.position);
+        ä»£ç†äºº.SetDestination(ç›®æ¨™.position);
     }
 
-    bool §ä¤}½b¤â() {
-        if (³Ìªñ¤}½b¤â != null) {
-            this.transform.LookAt(³Ìªñ¤}½b¤â); 
+    bool æ‰¾å¼“ç®­æ‰‹() {
+        if (æœ€è¿‘å¼“ç®­æ‰‹ != null) {
+            this.transform.LookAt(æœ€è¿‘å¼“ç®­æ‰‹); 
             return true; 
         }
-        GameObject[] ¤}½b¤â = GameObject.FindGameObjectsWithTag("¤}½b¤â");
+        GameObject[] å¼“ç®­æ‰‹ = GameObject.FindGameObjectsWithTag("å¼“ç®­æ‰‹");
         float dist;
-        foreach (GameObject t in ¤}½b¤â)
+        foreach (GameObject t in å¼“ç®­æ‰‹)
         {
             dist = Vector3.Distance(this.transform.position, t.transform.position);
-            if (dist < ®gµ{¶ZÂ÷)
+            if (dist < å°„ç¨‹è·é›¢)
             {
-                if (dist < ¤}½b¤â¶ZÂ÷)
+                if (dist < å¼“ç®­æ‰‹è·é›¢)
                 {
-                    ¤}½b¤â¶ZÂ÷ = dist;
-                    ³Ìªñ¤}½b¤â = t.transform;
-                    ¥N²z¤H.isStopped = true;
+                    å¼“ç®­æ‰‹è·é›¢ = dist;
+                    æœ€è¿‘å¼“ç®­æ‰‹ = t.transform;
+                    ä»£ç†äºº.isStopped = true;
                     rig.weight = 1;
-                    °Êµe.SetBool("FIRE", true);
-                    this.transform.LookAt(³Ìªñ¤}½b¤â);
-                    ¥Ø¼Ğ = ³Ìªñ¤}½b¤â;
+                    å‹•ç•«.SetBool("FIRE", true);
+                    this.transform.LookAt(æœ€è¿‘å¼“ç®­æ‰‹);
+                    ç›®æ¨™ = æœ€è¿‘å¼“ç®­æ‰‹;
                     //return true;
                 }
             }
         }
-        if (³Ìªñ¤}½b¤â != null)
+        if (æœ€è¿‘å¼“ç®­æ‰‹ != null)
         {
             return true;
         }
         else {
-            ¥N²z¤H.isStopped = false;
+            ä»£ç†äºº.isStopped = false;
             rig.weight = 0;
-            °Êµe.SetBool("FIRE", false);
+            å‹•ç•«.SetBool("FIRE", false);
             return false;
         }
         
@@ -114,44 +114,44 @@ public class enemyMove : MonoBehaviour
         //cv.transform.LookAt(Camera.main.transform);
         if (GameObject.Find("/target") == null)
         {
-            ¥N²z¤H.SetDestination(this.transform.position);
-            ¥N²z¤H.isStopped = true;
-            °Êµe.SetTrigger("WIN");
+            ä»£ç†äºº.SetDestination(this.transform.position);
+            ä»£ç†äºº.isStopped = true;
+            å‹•ç•«.SetTrigger("WIN");
             return;
         }
 
-        if (¥Ø¼Ğ == null)
+        if (ç›®æ¨™ == null)
         {
-            ·j¥Ø¼Ğ();
+            æœç›®æ¨™();
         }
 
-        if (!   §ä¤}½b¤â())
+        if (!   æ‰¾å¼“ç®­æ‰‹())
         {
-            °Êµe.SetBool("FIRE", false);
-            if (Vector3.Distance(this.transform.position, ¥Ø¼Ğ.position) < 0.4f)
+            å‹•ç•«.SetBool("FIRE", false);
+            if (Vector3.Distance(this.transform.position, ç›®æ¨™.position) < 0.4f)
             {
-                //if (¥Ø¼Ğ.name != "target")
-                Destroy(¥Ø¼Ğ.gameObject);
+                //if (ç›®æ¨™.name != "target")
+                Destroy(ç›®æ¨™.gameObject);
             }
         }
         else 
         {
-            if (Vector3.Distance(this.transform.position, ¥Ø¼Ğ.transform.position) > ®gµ{¶ZÂ÷) {
-                ¥Ø¼Ğ = null;
-                ³Ìªñ¤}½b¤â = null;
+            if (Vector3.Distance(this.transform.position, ç›®æ¨™.transform.position) > å°„ç¨‹è·é›¢) {
+                ç›®æ¨™ = null;
+                æœ€è¿‘å¼“ç®­æ‰‹ = null;
                 return;
             }
         }        
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "§Ú¤è¤l¼u") 
+        if (other.tag == "æˆ‘æ–¹å­å½ˆ") 
         {
             Destroy(other.gameObject);
             hp--;
-            ¦å¶q.text = hp.ToString();
+            è¡€é‡.text = hp.ToString();
             float blood = (float)hp / (float)OriHP;
-            ¦å±ø.transform.localScale = new Vector3(blood, 1, 1);
+            è¡€æ¢.transform.localScale = new Vector3(blood, 1, 1);
 
             if (hp <= 0) { Destroy(this.gameObject); }
         }

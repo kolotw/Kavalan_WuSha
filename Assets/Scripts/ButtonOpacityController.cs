@@ -1,12 +1,12 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
 public class ButtonTransparency : MonoBehaviour
 {
-    public Button button; // ©ì¤J§Aªº«ö¶s
+    public Button button; // æ‹–å…¥ä½ çš„æŒ‰éˆ•
     private Image buttonImage;
-    private float transparency = 1.0f; // Àq»{§¹¥ş¤£³z©ú
-    public float transparencyChangeSpeed = 0.1f; // ±±¨î³z©ú«×§ïÅÜªº³t«×
+    private float transparency = 1.0f; // é»˜èªå®Œå…¨ä¸é€æ˜
+    public float transparencyChangeSpeed = 0.1f; // æ§åˆ¶é€æ˜åº¦æ”¹è®Šçš„é€Ÿåº¦
 
     void Start()
     {
@@ -15,15 +15,15 @@ public class ButtonTransparency : MonoBehaviour
 
     void Update()
     {
-        // ¨Ï¥Î·Æ¹«ºu½ü¶i¦æ³z©ú«×ÅÜ¤Æ
+        // ä½¿ç”¨æ»‘é¼ æ»¾è¼ªé€²è¡Œé€æ˜åº¦è®ŠåŒ–
         float scroll = Input.GetAxis("Mouse ScrollWheel");
 
         if (scroll != 0f)
         {
             transparency -= scroll * transparencyChangeSpeed*2;
-            transparency = Mathf.Clamp(transparency, 0.5f, 1f); // ­­¨î³z©ú«×½d³ò¦b0¨ì1¤§¶¡
+            transparency = Mathf.Clamp(transparency, 0.5f, 1f); // é™åˆ¶é€æ˜åº¦ç¯„åœåœ¨0åˆ°1ä¹‹é–“
 
-            // §ó§ï«ö¶sªº³z©ú«×¡]alpha¡^
+            // æ›´æ”¹æŒ‰éˆ•çš„é€æ˜åº¦ï¼ˆalphaï¼‰
             Color color = buttonImage.color;
             color.a = transparency;
             buttonImage.color = color;

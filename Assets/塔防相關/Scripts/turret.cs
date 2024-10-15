@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
@@ -6,32 +6,32 @@ using UnityEngine.UI;
 
 public class turret : MonoBehaviour
 {
-    GameObject[] ¼Ä¤H;
-    public float ®gµ{½d³ò = 4f;
-    float ¥Ø«e¶ZÂ÷;
-    float ³Ìµu¶ZÂ÷ = 2f;
-    Transform ¥Ø¼Ğ;
+    GameObject[] æ•µäºº;
+    public float å°„ç¨‹ç¯„åœ = 4f;
+    float ç›®å‰è·é›¢;
+    float æœ€çŸ­è·é›¢ = 2f;
+    Transform ç›®æ¨™;
     Vector3 dir;
-    Vector3 µo®gÂIRAY;
+    Vector3 ç™¼å°„é»RAY;
 
-    Quaternion ±ÛÂà;
+    Quaternion æ—‹è½‰;
 
-    bool ¶}¤õ = false;
-    public float ¤õ¤O¶¡¹j = 2f;
+    bool é–‹ç« = false;
+    public float ç«åŠ›é–“éš” = 2f;
     float fireTime;
 
-    public Transform µo®gÂI¤@;
-    public Transform µo®gÂI¤G;
-    public GameObject ¤l¼u;
+    public Transform ç™¼å°„é»ä¸€;
+    public Transform ç™¼å°„é»äºŒ;
+    public GameObject å­å½ˆ;
 
     public int hp = 10;
     int OrigHP;
-    GameObject ¦å±ø;
-    Text ¦å¶q¤å¦r;
+    GameObject è¡€æ¢;
+    Text è¡€é‡æ–‡å­—;
 
-    //¤}½b¤â
+    //å¼“ç®­æ‰‹
     Animator anim;
-    public GameObject ¤}½b¤âªº¥Ø¼Ğ;
+    public GameObject å¼“ç®­æ‰‹çš„ç›®æ¨™;
     public Rig rig;
 
     // Start is called before the first frame update
@@ -39,11 +39,11 @@ public class turret : MonoBehaviour
     {
         OrigHP = hp;
         fireTime = Time.time;
-        ¦å±ø = transform.Find("Canvas/¦å±ø").gameObject;
-        ¦å¶q¤å¦r = transform.Find("Canvas/¦å¶q").gameObject.GetComponent<Text>();
-        ¦å¶q¤å¦r.text = hp.ToString();
+        è¡€æ¢ = transform.Find("Canvas/è¡€æ¢").gameObject;
+        è¡€é‡æ–‡å­— = transform.Find("Canvas/è¡€é‡").gameObject.GetComponent<Text>();
+        è¡€é‡æ–‡å­—.text = hp.ToString();
         
-        //¤}½b¤â­n°Êµe
+        //å¼“ç®­æ‰‹è¦å‹•ç•«
         if(GetComponent<Animator>() != null )
         {
             anim = GetComponent<Animator>();
@@ -54,10 +54,10 @@ public class turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        §ä¼Ä¤H();
-        if (¼Ä¤H.Length == 0) return;
-        if (¶}¤õ) {
-            if (Time.time > fireTime + ¤õ¤O¶¡¹j)
+        æ‰¾æ•µäºº();
+        if (æ•µäºº.Length == 0) return;
+        if (é–‹ç«) {
+            if (Time.time > fireTime + ç«åŠ›é–“éš”)
             {
                 rig.weight = 1;
                 anim.SetTrigger("FIRE");
@@ -65,63 +65,63 @@ public class turret : MonoBehaviour
             }
         }
     }
-    void §ä¼Ä¤H() 
+    void æ‰¾æ•µäºº() 
     {
-        ¼Ä¤H = GameObject.FindGameObjectsWithTag("¼Ä¤H");
-        if (¼Ä¤H.Length==0)
+        æ•µäºº = GameObject.FindGameObjectsWithTag("æ•µäºº");
+        if (æ•µäºº.Length==0)
         {
             rig.weight = 0;
             anim.SetTrigger("WIN");
             return;
         }
-        ³Ìµu¶ZÂ÷ = ®gµ{½d³ò;
-        foreach (GameObject e in ¼Ä¤H)
+        æœ€çŸ­è·é›¢ = å°„ç¨‹ç¯„åœ;
+        foreach (GameObject e in æ•µäºº)
         {
             
-            ¥Ø«e¶ZÂ÷ = Vector3.Distance(this.transform.position, e.transform.position);
-            if (¥Ø«e¶ZÂ÷ < ®gµ{½d³ò)
+            ç›®å‰è·é›¢ = Vector3.Distance(this.transform.position, e.transform.position);
+            if (ç›®å‰è·é›¢ < å°„ç¨‹ç¯„åœ)
             {
-                if (¥Ø«e¶ZÂ÷ < ³Ìµu¶ZÂ÷)
+                if (ç›®å‰è·é›¢ < æœ€çŸ­è·é›¢)
                 {
-                    ³Ìµu¶ZÂ÷ = ¥Ø«e¶ZÂ÷;
-                    ¥Ø¼Ğ = e.transform;
+                    æœ€çŸ­è·é›¢ = ç›®å‰è·é›¢;
+                    ç›®æ¨™ = e.transform;
                 }
             }
         }
-        if (¥Ø¼Ğ != null)
+        if (ç›®æ¨™ != null)
         {
-            dir = this.transform.position - ¥Ø¼Ğ.position;
-            µo®gÂIRAY = new Vector3(
+            dir = this.transform.position - ç›®æ¨™.position;
+            ç™¼å°„é»RAY = new Vector3(
                 this.transform.position.x, this.transform.position.y + 0.1f, this.transform.position.z);
-            Debug.DrawRay(µo®gÂIRAY, dir * -1, Color.red);
+            Debug.DrawRay(ç™¼å°„é»RAY, dir * -1, Color.red);
 
-            if (Vector3.Distance(this.transform.position, ¥Ø¼Ğ.position) < ®gµ{½d³ò)
+            if (Vector3.Distance(this.transform.position, ç›®æ¨™.position) < å°„ç¨‹ç¯„åœ)
             {
-                ¶}¤õ = true;
+                é–‹ç« = true;
                 if (dir != Vector3.zero)
                 {
-                    ±ÛÂà = Quaternion.LookRotation(dir * -1, Vector3.up);
-                    transform.rotation = Quaternion.Slerp(transform.rotation, ±ÛÂà, 20 * Time.deltaTime);
+                    æ—‹è½‰ = Quaternion.LookRotation(dir * -1, Vector3.up);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, æ—‹è½‰, 20 * Time.deltaTime);
                     this.transform.eulerAngles = new Vector3(0f, this.transform.eulerAngles.y, 0f);
                 }
             }
             else {
-                ¶}¤õ = false;
+                é–‹ç« = false;
             }
         }
         else {
-            ¶}¤õ = false;
+            é–‹ç« = false;
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "¼Ä¤è¤l¼u")
+        if (other.tag == "æ•µæ–¹å­å½ˆ")
         {
             Destroy(other.gameObject);
             hp--;
-            float ¦å¶q = (float)hp / (float)OrigHP;
-            ¦å±ø.transform.localScale = new Vector3(¦å¶q, 1f, 1f);
-            ¦å¶q¤å¦r.text = hp.ToString();
+            float è¡€é‡ = (float)hp / (float)OrigHP;
+            è¡€æ¢.transform.localScale = new Vector3(è¡€é‡, 1f, 1f);
+            è¡€é‡æ–‡å­—.text = hp.ToString();
             if (hp <= 0)
             {
                 Destroy(this.gameObject);

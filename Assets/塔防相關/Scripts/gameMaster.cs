@@ -1,64 +1,64 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class gameMaster : MonoBehaviour
 {
-    //------------- ª«¥ó -------------------
-    public GameObject[] ¦u¤è = new GameObject[3];
-    public GameObject[] §ğ¤è = new GameObject[3];
+    //------------- ç‰©ä»¶ -------------------
+    public GameObject[] å®ˆæ–¹ = new GameObject[3];
+    public GameObject[] æ”»æ–¹ = new GameObject[3];
 
-    //------------- ¸ê·½¤W­­ -------------------
-    public int ¯¥A¤W­­ = 5;
-    public int ¯¥B¤W­­ = 5;
-    public int ¯¥C¤W­­ = 5;
+    //------------- è³‡æºä¸Šé™ -------------------
+    public int ç ²Aä¸Šé™ = 5;
+    public int ç ²Bä¸Šé™ = 5;
+    public int ç ²Cä¸Šé™ = 5;
 
-    //------------- §d¨F±ÏÅ@¥Í¦¨ÂI -------------------
-    public GameObject §d¨F;
+    //------------- å³æ²™æ•‘è­·ç”Ÿæˆé» -------------------
+    public GameObject å³æ²™;
 
 
-    //------------- §ğ¶Õ -------------------
-    public int ¥Ø«eÃö¥d = 1;
-    public float ¨C´X¬í²£¥Í¤@ªi = 10f;
-    public float ¨C¦¸²£¥Í¼Ä¤Hªº¶¡¹j = 1f;
-    public int ¨C¦¸¥Í¦¨¼Ä¤H¼Æ = 3;
-    public int §ğ¶Õ¤W­­ = 1;
-    public int ¥Ø«e²Ä´Xªi§ğ¶Õ = 0;
-    float §ğÀ»­Ë¼Æ;
+    //------------- æ”»å‹¢ -------------------
+    public int ç›®å‰é—œå¡ = 1;
+    public float æ¯å¹¾ç§’ç”¢ç”Ÿä¸€æ³¢ = 10f;
+    public float æ¯æ¬¡ç”¢ç”Ÿæ•µäººçš„é–“éš” = 1f;
+    public int æ¯æ¬¡ç”Ÿæˆæ•µäººæ•¸ = 3;
+    public int æ”»å‹¢ä¸Šé™ = 1;
+    public int ç›®å‰ç¬¬å¹¾æ³¢æ”»å‹¢ = 0;
+    float æ”»æ“Šå€’æ•¸;
 
-    //------------- ²£¥Í¼Ä¤H -------------------
-    GameObject[] ¥Í¦¨ÂI;
-    int ²Ä´X­Ó¥Í¦¨ÂI;
-    GameObject ¤w¥Í¦¨¼Ä¤H;
+    //------------- ç”¢ç”Ÿæ•µäºº -------------------
+    GameObject[] ç”Ÿæˆé»;
+    int ç¬¬å¹¾å€‹ç”Ÿæˆé»;
+    GameObject å·²ç”Ÿæˆæ•µäºº;
 
     //------------- UI TEXT -------------------
-    public Text §ğ¶Õ¤å¦r; // ²Ä´XÃö¡A²Ä´Xªi¡A­Ë¼Æ¡K ³Ó±Ñ°T®§
-    public Text ¸ê·½¤å¦r;
+    public Text æ”»å‹¢æ–‡å­—; // ç¬¬å¹¾é—œï¼Œç¬¬å¹¾æ³¢ï¼Œå€’æ•¸â€¦ å‹æ•—è¨Šæ¯
+    public Text è³‡æºæ–‡å­—;
 
     bool EndGame = false;
-    bool ¤wº¶¤õ = false;
+    bool å·²ç†„ç« = false;
 
-    public GameObject ¶}©lµe­±;
+    public GameObject é–‹å§‹ç•«é¢;
     public bool isWin = false;
     public bool startGame = false;
 
     //GUI
-    public GUI±±¨î¾¹ gUI;
-    public int ¨¤¦â=0;
+    public GUIæ§åˆ¶å™¨ gUI;
+    public int è§’è‰²=0;
     // Start is called before the first frame update
     void Start()
     {
-        ¥Í¦¨ÂI = GameObject.FindGameObjectsWithTag("¥Í¦¨ÂI");
-        §ğÀ»­Ë¼Æ = ¨C´X¬í²£¥Í¤@ªi;
+        ç”Ÿæˆé» = GameObject.FindGameObjectsWithTag("ç”Ÿæˆé»");
+        æ”»æ“Šå€’æ•¸ = æ¯å¹¾ç§’ç”¢ç”Ÿä¸€æ³¢;
         if (gUI != null)
         {
             gUI.myLabel.text = string.Empty;
         }
         
     }
-    void º¶¤õ() {
-        GameObject[] turrets = GameObject.FindGameObjectsWithTag("¾¿º¿Äõ");
+    void ç†„ç«() {
+        GameObject[] turrets = GameObject.FindGameObjectsWithTag("å™¶ç‘ªè˜­");
         foreach (GameObject t in turrets)
         {
             if (t.GetComponent<Animator>() != null)
@@ -66,10 +66,10 @@ public class gameMaster : MonoBehaviour
                 t.transform.Find("RigHead/HeadAim").gameObject.SetActive(false);
                 //t.GetComponent<Animator>().SetBool("WIN", true);
             }
-            t.GetComponent<¾¿º¿Äõ_Äİ©Ê³]©w>().enabled = false;
+            t.GetComponent<å™¶ç‘ªè˜­_å±¬æ€§è¨­å®š>().enabled = false;
         }
         Camera.main.gameObject.GetComponent<deploy>().enabled = false;
-        ¤wº¶¤õ = true;
+        å·²ç†„ç« = true;
     }
     // Update is called once per frame
     void Update()
@@ -81,70 +81,70 @@ public class gameMaster : MonoBehaviour
         }
 
         if (EndGame) {
-            if(!¤wº¶¤õ)
-                º¶¤õ();
+            if(!å·²ç†„ç«)
+                ç†„ç«();
             return;
         }
        if (GameObject.Find("target") == null)
         {
-            §ğ¶Õ¤å¦r.text = "§A¿é¤F";
+            æ”»å‹¢æ–‡å­—.text = "ä½ è¼¸äº†";
             EndGame = true;
             gUI.result(false);
         }
         else
         {
-            §ğ¶Õ¤å¦r.text = "²Ä" + ¥Ø«eÃö¥d.ToString() + "Ãö ²Ä" + ¥Ø«e²Ä´Xªi§ğ¶Õ.ToString()
-               + "ªi§ğ¶Õ ÁÙ¦³" + Mathf.RoundToInt(§ğÀ»­Ë¼Æ).ToString() + "¬í";
-            ¸ê·½¤å¦r.text = "¸ê·½¡G\n¯¥¥xA¡G" + ¯¥A¤W­­.ToString() + "\n¯¥¥xB¡G" + ¯¥B¤W­­.ToString();
+            æ”»å‹¢æ–‡å­—.text = "ç¬¬" + ç›®å‰é—œå¡.ToString() + "é—œ ç¬¬" + ç›®å‰ç¬¬å¹¾æ³¢æ”»å‹¢.ToString()
+               + "æ³¢æ”»å‹¢ é‚„æœ‰" + Mathf.RoundToInt(æ”»æ“Šå€’æ•¸).ToString() + "ç§’";
+            è³‡æºæ–‡å­—.text = "è³‡æºï¼š\nç ²å°Aï¼š" + ç ²Aä¸Šé™.ToString() + "\nç ²å°Bï¼š" + ç ²Bä¸Šé™.ToString();
             
-            gUI.myLabel.text = §ğ¶Õ¤å¦r.text;
-            gUI.leftA.text = ¯¥A¤W­­.ToString();
-            gUI.leftB.text = ¯¥B¤W­­.ToString();
-            gUI.leftC.text = ¯¥C¤W­­.ToString();
+            gUI.myLabel.text = æ”»å‹¢æ–‡å­—.text;
+            gUI.leftA.text = ç ²Aä¸Šé™.ToString();
+            gUI.leftB.text = ç ²Bä¸Šé™.ToString();
+            gUI.leftC.text = ç ²Cä¸Šé™.ToString();
 
-            if (¥Ø«e²Ä´Xªi§ğ¶Õ <= §ğ¶Õ¤W­­)
+            if (ç›®å‰ç¬¬å¹¾æ³¢æ”»å‹¢ <= æ”»å‹¢ä¸Šé™)
             {
-                §ğÀ»­Ë¼Æ -= Time.deltaTime;
-                if (§ğÀ»­Ë¼Æ < 0)
+                æ”»æ“Šå€’æ•¸ -= Time.deltaTime;
+                if (æ”»æ“Šå€’æ•¸ < 0)
                 {
-                    StartCoroutine(¤@ªi¼Ä¤H());
-                    §ğÀ»­Ë¼Æ = ¨C´X¬í²£¥Í¤@ªi;
+                    StartCoroutine(ä¸€æ³¢æ•µäºº());
+                    æ”»æ“Šå€’æ•¸ = æ¯å¹¾ç§’ç”¢ç”Ÿä¸€æ³¢;
                 }
             }
             else
             {
-                §ğÀ»­Ë¼Æ = 0;
-                if (GameObject.FindGameObjectsWithTag("§ğÀ»¤è").Length == 0)
+                æ”»æ“Šå€’æ•¸ = 0;
+                if (GameObject.FindGameObjectsWithTag("æ”»æ“Šæ–¹").Length == 0)
                 {
-                    §ğ¶Õ¤å¦r.text = "§AÄ¹¤F";
+                    æ”»å‹¢æ–‡å­—.text = "ä½ è´äº†";
                     isWin = true;
                     EndGame = true;
                 }
             }
         }
     }
-    void ¥Í¦¨¼Ä¤H()
+    void ç”Ÿæˆæ•µäºº()
     {
-        int e = Random.Range(0, §ğ¤è.Length);
-        ¤w¥Í¦¨¼Ä¤H = Instantiate(§ğ¤è[e], ¥Í¦¨ÂI[²Ä´X­Ó¥Í¦¨ÂI].transform.position, Quaternion.identity);
-        ¤w¥Í¦¨¼Ä¤H.tag = "§ğÀ»¤è";
+        int e = Random.Range(0, æ”»æ–¹.Length);
+        å·²ç”Ÿæˆæ•µäºº = Instantiate(æ”»æ–¹[e], ç”Ÿæˆé»[ç¬¬å¹¾å€‹ç”Ÿæˆé»].transform.position, Quaternion.identity);
+        å·²ç”Ÿæˆæ•µäºº.tag = "æ”»æ“Šæ–¹";
     }
 
-    IEnumerator ¤@ªi¼Ä¤H()
+    IEnumerator ä¸€æ³¢æ•µäºº()
     {
-        ¥Ø«e²Ä´Xªi§ğ¶Õ++;
-        ²Ä´X­Ó¥Í¦¨ÂI = Random.Range(0, ¥Í¦¨ÂI.Length);
+        ç›®å‰ç¬¬å¹¾æ³¢æ”»å‹¢++;
+        ç¬¬å¹¾å€‹ç”Ÿæˆé» = Random.Range(0, ç”Ÿæˆé».Length);
         
-        for (int i = 0; i < ¨C¦¸¥Í¦¨¼Ä¤H¼Æ; i++)
+        for (int i = 0; i < æ¯æ¬¡ç”Ÿæˆæ•µäººæ•¸; i++)
         {
-            ¥Í¦¨¼Ä¤H();
-            yield return new WaitForSeconds(¨C¦¸²£¥Í¼Ä¤Hªº¶¡¹j);
+            ç”Ÿæˆæ•µäºº();
+            yield return new WaitForSeconds(æ¯æ¬¡ç”¢ç”Ÿæ•µäººçš„é–“éš”);
         }
     }
 
-    public void «ö¤U¶}©l()
+    public void æŒ‰ä¸‹é–‹å§‹()
     {
-        ¶}©lµe­±.SetActive(false);
-        StartCoroutine(¤@ªi¼Ä¤H());
+        é–‹å§‹ç•«é¢.SetActive(false);
+        StartCoroutine(ä¸€æ³¢æ•µäºº());
     }
 }

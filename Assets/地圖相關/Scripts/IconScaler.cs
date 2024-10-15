@@ -1,24 +1,24 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class IconScaler : MonoBehaviour
 {
-    public Camera mainCamera; // ¥DÄá¹³¾÷
-    public Transform[] iconTransforms; // icon ªº Transform
-    public bool[] isInverseTransparency; // ¬O§_¬O¤Ï¦V³z©ú«×
+    public Camera mainCamera; // ä¸»æ”åƒæ©Ÿ
+    public Transform[] iconTransforms; // icon çš„ Transform
+    public bool[] isInverseTransparency; // æ˜¯å¦æ˜¯åå‘é€æ˜åº¦
 
-    private float initialSize; // ªì©l Camera orthographic size
-    private Vector3[] initialScales; // ªì©l icon scale
+    private float initialSize; // åˆå§‹ Camera orthographic size
+    private Vector3[] initialScales; // åˆå§‹ icon scale
 
-    //--- ºu½üÁY©ñ ---
-    public float zoomSpeed = 1.5f; // ÁY©ñ³t«×
-    public float minZoom = 1f; // ³Ì¤pÁY©ñ
-    public float maxZoom = 10f; // ³Ì¤jÁY©ñ
+    //--- æ»¾è¼ªç¸®æ”¾ ---
+    public float zoomSpeed = 1.5f; // ç¸®æ”¾é€Ÿåº¦
+    public float minZoom = 1f; // æœ€å°ç¸®æ”¾
+    public float maxZoom = 10f; // æœ€å¤§ç¸®æ”¾
 
-    //--- ·Æ¹«©ì¦² ²¾°Ê¦a¹Ï ---
-    private Vector3 dragOrigin; // ©ì¦²°_©lÂI
-    private bool isDragging = false; // ¬O§_¥¿¦b©ì¦²
+    //--- æ»‘é¼ æ‹–æ›³ ç§»å‹•åœ°åœ– ---
+    private Vector3 dragOrigin; // æ‹–æ›³èµ·å§‹é»
+    private bool isDragging = false; // æ˜¯å¦æ­£åœ¨æ‹–æ›³
 
-    // ¦a¹ÏÃä¬É
+    // åœ°åœ–é‚Šç•Œ
     public float minX = -4.2f;
     public float maxX = 7f;
     public float minY = -2.5f;
@@ -28,7 +28,7 @@ public class IconScaler : MonoBehaviour
         mainCamera = Camera.main;
         initialSize = mainCamera.orthographicSize;
 
-        // °O¿ı¨C­Ó icon ªºªì©l scale
+        // è¨˜éŒ„æ¯å€‹ icon çš„åˆå§‹ scale
         initialScales = new Vector3[iconTransforms.Length];
         for (int i = 0; i < iconTransforms.Length; i++)
         {
@@ -45,27 +45,27 @@ public class IconScaler : MonoBehaviour
 
     void HandleMouseDrag()
     {
-        // ¦pªG«ö¤U·Æ¹«¥ªÁä
+        // å¦‚æœæŒ‰ä¸‹æ»‘é¼ å·¦éµ
         if (Input.GetMouseButtonDown(0))
         {
             dragOrigin = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             isDragging = true;
         }
 
-        // ¦pªG©ñ¶}·Æ¹«¥ªÁä
+        // å¦‚æœæ”¾é–‹æ»‘é¼ å·¦éµ
         if (Input.GetMouseButtonUp(0))
         {
             isDragging = false;
         }
 
-        // ¦pªG¥¿¦b©ì¦²
+        // å¦‚æœæ­£åœ¨æ‹–æ›³
         if (isDragging)
         {
             Vector3 currentMousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             Vector3 difference = dragOrigin - currentMousePosition;
             Vector3 newPosition = mainCamera.transform.position + difference;
 
-            // ­­¨î¬Û¾÷ªº²¾°Ê½d³ò
+            // é™åˆ¶ç›¸æ©Ÿçš„ç§»å‹•ç¯„åœ
             newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
             newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
 
@@ -75,41 +75,41 @@ public class IconScaler : MonoBehaviour
 
     void HandleZoom()
     {
-        // Àò¨úºu½ü¿é¤J
+        // ç²å–æ»¾è¼ªè¼¸å…¥
         float scroll = Input.GetAxis("Mouse ScrollWheel");
 
-        // ­pºâ·sªº orthographicSize
+        // è¨ˆç®—æ–°çš„ orthographicSize
         float newSize = mainCamera.orthographicSize - scroll * zoomSpeed;
 
-        // ­­¨î·sªº orthographicSize ¦b minZoom ©M maxZoom ½d³ò¤º
+        // é™åˆ¶æ–°çš„ orthographicSize åœ¨ minZoom å’Œ maxZoom ç¯„åœå…§
         newSize = Mathf.Clamp(newSize, minZoom, maxZoom);
 
-        // ³]¸m·sªº orthographicSize
+        // è¨­ç½®æ–°çš„ orthographicSize
         mainCamera.orthographicSize = newSize;
     }
 
     void UpdateIconScaleAndTransparency()
     {
-        // ­pºâ¤ñ¨Ò
+        // è¨ˆç®—æ¯”ä¾‹
         float scaleRatio = mainCamera.orthographicSize / initialSize;
 
         for (int i = 0; i < iconTransforms.Length; i++)
         {
-            // ®Ú¾Ú¤ñ¨ÒÁY©ñ icon¡A¨Ã­­¨îÁY©ñ½d³ò
+            // æ ¹æ“šæ¯”ä¾‹ç¸®æ”¾ iconï¼Œä¸¦é™åˆ¶ç¸®æ”¾ç¯„åœ
             float clampedScale = Mathf.Clamp(initialScales[i].x * scaleRatio, 0.6f, 1f);
             iconTransforms[i].localScale = new Vector3(clampedScale, clampedScale, clampedScale);
 
-            // ­pºâ³z©ú«×
+            // è¨ˆç®—é€æ˜åº¦
             float t = (mainCamera.orthographicSize - minZoom) / (maxZoom - minZoom);
             float alpha = Mathf.Lerp(1f, 0f, t);
 
-            // ®Ú¾Ú isInverseTransparency ¼Ğ»x³]¸m³z©ú«×
+            // æ ¹æ“š isInverseTransparency æ¨™èªŒè¨­ç½®é€æ˜åº¦
             if (isInverseTransparency[i])
             {
                 alpha = 1f - alpha;
             }
 
-            // ³]¸m icon ªº³z©ú«×
+            // è¨­ç½® icon çš„é€æ˜åº¦
             SpriteRenderer spriteRenderer = iconTransforms[i].GetComponent<SpriteRenderer>();
             if (spriteRenderer != null)
             {

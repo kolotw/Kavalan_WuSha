@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,211 +7,211 @@ using UnityEngine.Animations;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.UI;
 
-public class º~¤H¦æ°Ê : MonoBehaviour
+public class æ¼¢äººè¡Œå‹• : MonoBehaviour
 {
-    NavMeshAgent ¾É¯è;
-    Animator °Êµe;
+    NavMeshAgent å°èˆª;
+    Animator å‹•ç•«;
 
-    public Transform §ğÀ»¥Ø¼Ğ;
-    GameObject[] ¦X¨Ö¥Ø¼Ğ;
+    public Transform æ”»æ“Šç›®æ¨™;
+    GameObject[] åˆä½µç›®æ¨™;
 
     public int hp = 30;
 
-    public float ®gµ{¶ZÂ÷ = 2f;
-    float ³Ìµu¶ZÂ÷ = 50f;
+    public float å°„ç¨‹è·é›¢ = 2f;
+    float æœ€çŸ­è·é›¢ = 50f;
 
-    public float ¶}¤õ¶¡¶Z = 1.6f;
+    public float é–‹ç«é–“è· = 1.6f;
     float fireTime;
 
-    Text ¦å¶q;
-    GameObject ¦å±ø;
+    Text è¡€é‡;
+    GameObject è¡€æ¢;
     int OriHP;
 
     public Rig rig;
 
     void Start()
     {
-        ¦å¶q = transform.Find("Canvas/¦å¶q").gameObject.GetComponent<Text>();
-        ¦å¶q.text = hp.ToString();
-        ¦å±ø = transform.Find("Canvas/¦å±ø").gameObject;
+        è¡€é‡ = transform.Find("Canvas/è¡€é‡").gameObject.GetComponent<Text>();
+        è¡€é‡.text = hp.ToString();
+        è¡€æ¢ = transform.Find("Canvas/è¡€æ¢").gameObject;
         OriHP = hp;
         rig.weight = 1;
 
-        fireTime = ¶}¤õ¶¡¶Z;
-        °Êµe = GetComponent<Animator>();
-        ¾É¯è = GetComponent<NavMeshAgent>();
+        fireTime = é–‹ç«é–“è·;
+        å‹•ç•« = GetComponent<Animator>();
+        å°èˆª = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
         if (GameObject.Find("/target") == null)
         {
-            °±¤î¾É¯è¨Ã¼½©ñ³Ó§Q°Êµe();
+            åœæ­¢å°èˆªä¸¦æ’­æ”¾å‹åˆ©å‹•ç•«();
             return;
         }
 
-        ·j¥Ø¼Ğ();
+        æœç›®æ¨™();
 
-        if (§ğÀ»¥Ø¼Ğ == null)
+        if (æ”»æ“Šç›®æ¨™ == null)
         {
-            ­«¸m³Ìµu¶ZÂ÷();
+            é‡ç½®æœ€çŸ­è·é›¢();
             return;
         }
 
-        if (§ğÀ»¥Ø¼Ğ != null && (§ğÀ»¥Ø¼Ğ.tag == "¤¤Ä~ÂI" || §ğÀ»¥Ø¼Ğ.name == "target"))
+        if (æ”»æ“Šç›®æ¨™ != null && (æ”»æ“Šç›®æ¨™.tag == "ä¸­ç¹¼é»" || æ”»æ“Šç›®æ¨™.name == "target"))
         {
-            ¦pªG¥Ø¼Ğ¾aªñ«h¾P·´();
+            å¦‚æœç›®æ¨™é è¿‘å‰‡éŠ·æ¯€();
         }
-        else if (§ğÀ»¥Ø¼Ğ != null && §ğÀ»¥Ø¼Ğ.tag != "¤¤Ä~ÂI" && §ğÀ»¥Ø¼Ğ.name != "target")
+        else if (æ”»æ“Šç›®æ¨™ != null && æ”»æ“Šç›®æ¨™.tag != "ä¸­ç¹¼é»" && æ”»æ“Šç›®æ¨™.name != "target")
         {
-            ¦pªG¦b®gµ{¤º«h§ğÀ»();
-        }
-    }
-
-    void °±¤î¾É¯è¨Ã¼½©ñ³Ó§Q°Êµe()
-    {
-        ¾É¯è.SetDestination(this.transform.position);
-        ¾É¯è.isStopped = true;
-        °Êµe.SetTrigger("WIN");
-    }
-
-    void ­«¸m³Ìµu¶ZÂ÷()
-    {
-        ³Ìµu¶ZÂ÷ = 50f;
-    }
-
-    void ¦pªG¥Ø¼Ğ¾aªñ«h¾P·´()
-    {
-        if (Vector3.Distance(§ğÀ»¥Ø¼Ğ.position, this.transform.position) < 0.3f)
-        {
-            Destroy(§ğÀ»¥Ø¼Ğ.gameObject);
+            å¦‚æœåœ¨å°„ç¨‹å…§å‰‡æ”»æ“Š();
         }
     }
 
-    void ¦pªG¦b®gµ{¤º«h§ğÀ»()
+    void åœæ­¢å°èˆªä¸¦æ’­æ”¾å‹åˆ©å‹•ç•«()
     {
-        if (Vector3.Distance(this.transform.position, §ğÀ»¥Ø¼Ğ.transform.position) < ®gµ{¶ZÂ÷)
+        å°èˆª.SetDestination(this.transform.position);
+        å°èˆª.isStopped = true;
+        å‹•ç•«.SetTrigger("WIN");
+    }
+
+    void é‡ç½®æœ€çŸ­è·é›¢()
+    {
+        æœ€çŸ­è·é›¢ = 50f;
+    }
+
+    void å¦‚æœç›®æ¨™é è¿‘å‰‡éŠ·æ¯€()
+    {
+        if (Vector3.Distance(æ”»æ“Šç›®æ¨™.position, this.transform.position) < 0.3f)
         {
-            °Êµe.SetBool("Run", false);
-            ¾É¯è.isStopped = true;
-            ­±¦V¥Ø¼Ğ();
-            ¹Á¸Õ¶}¤õ();
+            Destroy(æ”»æ“Šç›®æ¨™.gameObject);
         }
     }
 
-    void ­±¦V¥Ø¼Ğ()
+    void å¦‚æœåœ¨å°„ç¨‹å…§å‰‡æ”»æ“Š()
     {
-        this.transform.LookAt(§ğÀ»¥Ø¼Ğ);
+        if (Vector3.Distance(this.transform.position, æ”»æ“Šç›®æ¨™.transform.position) < å°„ç¨‹è·é›¢)
+        {
+            å‹•ç•«.SetBool("Run", false);
+            å°èˆª.isStopped = true;
+            é¢å‘ç›®æ¨™();
+            å˜—è©¦é–‹ç«();
+        }
+    }
+
+    void é¢å‘ç›®æ¨™()
+    {
+        this.transform.LookAt(æ”»æ“Šç›®æ¨™);
         this.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, 0);
     }
 
-    void ¹Á¸Õ¶}¤õ()
+    void å˜—è©¦é–‹ç«()
     {
         if (Time.time > fireTime)
         {
-            °Êµe.SetTrigger("FIRE");
-            fireTime = Time.time + ¶}¤õ¶¡¶Z;
+            å‹•ç•«.SetTrigger("FIRE");
+            fireTime = Time.time + é–‹ç«é–“è·;
         }
     }
 
-    void ·j¥Ø¼Ğ()
+    void æœç›®æ¨™()
     {
-        GameObject[] ¤¤Ä~ÂI = GameObject.FindGameObjectsWithTag("¤¤Ä~ÂI");
-        GameObject[] ¾¿º¿Äõ = GameObject.FindGameObjectsWithTag("¾¿º¿Äõ");
+        GameObject[] ä¸­ç¹¼é» = GameObject.FindGameObjectsWithTag("ä¸­ç¹¼é»");
+        GameObject[] å™¶ç‘ªè˜­ = GameObject.FindGameObjectsWithTag("å™¶ç‘ªè˜­");
 
-        ¦X¨Ö¥Ø¼Ğ = ¤¤Ä~ÂI.Concat(¾¿º¿Äõ).ToArray();
+        åˆä½µç›®æ¨™ = ä¸­ç¹¼é».Concat(å™¶ç‘ªè˜­).ToArray();
 
-        if (¦X¨Ö¥Ø¼Ğ.Length == 0)
+        if (åˆä½µç›®æ¨™.Length == 0)
         {
-            ³]¸m§ğÀ»¥Ø¼Ğ¬°Target();
+            è¨­ç½®æ”»æ“Šç›®æ¨™ç‚ºTarget();
         }
         else
         {
-            ¿ï¾Ü³Ìªñªº¥Ø¼Ğ();
+            é¸æ“‡æœ€è¿‘çš„ç›®æ¨™();
         }
 
-        ¦pªG¦³§ğÀ»¥Ø¼Ğ«h¾É¯è();
+        å¦‚æœæœ‰æ”»æ“Šç›®æ¨™å‰‡å°èˆª();
     }
 
-    void ³]¸m§ğÀ»¥Ø¼Ğ¬°Target()
+    void è¨­ç½®æ”»æ“Šç›®æ¨™ç‚ºTarget()
     {
         if (GameObject.Find("/target") != null)
         {
-            §ğÀ»¥Ø¼Ğ = GameObject.Find("/target").transform;
+            æ”»æ“Šç›®æ¨™ = GameObject.Find("/target").transform;
         }
     }
 
-    void ¿ï¾Ü³Ìªñªº¥Ø¼Ğ()
+    void é¸æ“‡æœ€è¿‘çš„ç›®æ¨™()
     {
-        float ¥Ø«e¶ZÂ÷;
-        foreach (GameObject ¥Ø¼Ğ in ¦X¨Ö¥Ø¼Ğ)
+        float ç›®å‰è·é›¢;
+        foreach (GameObject ç›®æ¨™ in åˆä½µç›®æ¨™)
         {
-            ¥Ø«e¶ZÂ÷ = Vector3.Distance(¥Ø¼Ğ.transform.position, this.transform.position);
-            if (¥Ø«e¶ZÂ÷ < ³Ìµu¶ZÂ÷)
+            ç›®å‰è·é›¢ = Vector3.Distance(ç›®æ¨™.transform.position, this.transform.position);
+            if (ç›®å‰è·é›¢ < æœ€çŸ­è·é›¢)
             {
-                ³Ìµu¶ZÂ÷ = ¥Ø«e¶ZÂ÷;
-                §ğÀ»¥Ø¼Ğ = ¥Ø¼Ğ.transform;
+                æœ€çŸ­è·é›¢ = ç›®å‰è·é›¢;
+                æ”»æ“Šç›®æ¨™ = ç›®æ¨™.transform;
             }
         }
     }
 
-    void ¦pªG¦³§ğÀ»¥Ø¼Ğ«h¾É¯è()
+    void å¦‚æœæœ‰æ”»æ“Šç›®æ¨™å‰‡å°èˆª()
     {
-        if (§ğÀ»¥Ø¼Ğ != null)
+        if (æ”»æ“Šç›®æ¨™ != null)
         {
-            ¾É¯è.isStopped = false;
-            ¾É¯è.SetDestination(§ğÀ»¥Ø¼Ğ.position);
-            °Êµe.SetBool("Run", true);
-            ¦pªG¥Ø¼Ğ¤£¬OTarget«h¶Ç»¼¥Ø¼Ğµ¹¨¤¦â();
+            å°èˆª.isStopped = false;
+            å°èˆª.SetDestination(æ”»æ“Šç›®æ¨™.position);
+            å‹•ç•«.SetBool("Run", true);
+            å¦‚æœç›®æ¨™ä¸æ˜¯Targetå‰‡å‚³éç›®æ¨™çµ¦è§’è‰²();
         }
     }
 
-    void ¦pªG¥Ø¼Ğ¤£¬OTarget«h¶Ç»¼¥Ø¼Ğµ¹¨¤¦â()
+    void å¦‚æœç›®æ¨™ä¸æ˜¯Targetå‰‡å‚³éç›®æ¨™çµ¦è§’è‰²()
     {
-        if (§ğÀ»¥Ø¼Ğ.name != "target")
+        if (æ”»æ“Šç›®æ¨™.name != "target")
         {
-            ¶Ç¥Ø¼Ğµ¹¨¤¦â();
+            å‚³ç›®æ¨™çµ¦è§’è‰²();
         }
     }
 
-    void ¶Ç¥Ø¼Ğµ¹¨¤¦â()
+    void å‚³ç›®æ¨™çµ¦è§’è‰²()
     {
-        if (this.transform.name == "º~¤H_¹A¤Ò_¾SÀY(Clone)")
+        if (this.transform.name == "æ¼¢äºº_è¾²å¤«_é‹¤é ­(Clone)")
         {
-            GetComponent<º~¤H¬å¼A>().¥Ø¼Ğ = §ğÀ»¥Ø¼Ğ;
+            GetComponent<æ¼¢äººç åŠˆ>().ç›®æ¨™ = æ”»æ“Šç›®æ¨™;
         }
-        else if (this.transform.name == "º~¤H-¤}½b¤â F1(Clone)")
+        else if (this.transform.name == "æ¼¢äºº-å¼“ç®­æ‰‹ F1(Clone)")
         {
-            GetComponent<º~¤H®g½b>().¥Ø¼Ğ = §ğÀ»¥Ø¼Ğ;
+            GetComponent<æ¼¢äººå°„ç®­>().ç›®æ¨™ = æ”»æ“Šç›®æ¨™;
         }
 
         transform.Find("Rig 1/HeadAim").gameObject.GetComponent<MultiAimConstraint>().data.sourceObjects
-            = new WeightedTransformArray { new WeightedTransform(§ğÀ»¥Ø¼Ğ, 1) };
+            = new WeightedTransformArray { new WeightedTransform(æ”»æ“Šç›®æ¨™, 1) };
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "¾¿º¿ÄõªZ¾¹")
+        if (other.tag == "å™¶ç‘ªè˜­æ­¦å™¨")
         {
-            ¨ü¨ì§ğÀ»(other);
+            å—åˆ°æ”»æ“Š(other);
         }
     }
 
-    void ¨ü¨ì§ğÀ»(Collider other)
+    void å—åˆ°æ”»æ“Š(Collider other)
     {
         Destroy(other.gameObject);
         hp--;
-        §ó·s¦å¶qÅã¥Ü();
+        æ›´æ–°è¡€é‡é¡¯ç¤º();
         if (hp <= 0)
         {
             Destroy(this.gameObject);
         }
     }
 
-    void §ó·s¦å¶qÅã¥Ü()
+    void æ›´æ–°è¡€é‡é¡¯ç¤º()
     {
-        ¦å¶q.text = hp.ToString();
+        è¡€é‡.text = hp.ToString();
         float blood = (float)hp / (float)OriHP;
-        ¦å±ø.transform.localScale = new Vector3(blood, 1, 1);
+        è¡€æ¢.transform.localScale = new Vector3(blood, 1, 1);
     }
 }

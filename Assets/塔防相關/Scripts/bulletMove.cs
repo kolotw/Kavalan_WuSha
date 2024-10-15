@@ -1,10 +1,10 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class bulletMove : MonoBehaviour
 {
-    public float ¤l¼u³t«× = 10f;
+    public float å­å½ˆé€Ÿåº¦ = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +14,6 @@ public class bulletMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.Translate(Vector3.forward * ¤l¼u³t«× * Time.deltaTime);
+        this.transform.Translate(Vector3.forward * å­å½ˆé€Ÿåº¦ * Time.deltaTime);
     }
 }

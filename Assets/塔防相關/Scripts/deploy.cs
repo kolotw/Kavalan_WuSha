@@ -1,23 +1,23 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class deploy : MonoBehaviour
 {
-    GameObject[] ¯¥¥x = new GameObject[3];
-    GameObject §d¨F;
+    GameObject[] ç ²å° = new GameObject[3];
+    GameObject å³æ²™;
     Vector3 newPos;
-    GameObject ¤w³¡¸p;
-    //int ¨¤¦â = 0;
-    //int ³Ñ¾l¼Æ = 0;
+    GameObject å·²éƒ¨ç½²;
+    //int è§’è‰² = 0;
+    //int å‰©é¤˜æ•¸ = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        ¯¥¥x[0] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().¦u¤è[0];
-        ¯¥¥x[1] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().¦u¤è[1];
-        ¯¥¥x[2] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().¦u¤è[2];
-        §d¨F = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().§d¨F;
+        ç ²å°[0] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().å®ˆæ–¹[0];
+        ç ²å°[1] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().å®ˆæ–¹[1];
+        ç ²å°[2] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().å®ˆæ–¹[2];
+        å³æ²™ = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().å³æ²™;
     }
 
     // Update is called once per frame
@@ -31,35 +31,35 @@ public class deploy : MonoBehaviour
             Mathf.Infinity
             ))
         {
-            if (hit.transform.tag == "¥i³¡¸p")
+            if (hit.transform.tag == "å¯éƒ¨ç½²")
             {
                 if (Input.GetKeyUp(KeyCode.Mouse0))
                 {
                     gameMaster gm = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>();
-                    int ¨¤¦â = gm.¨¤¦â;
-                    int ³Ñ¾l¼Æ = Get³Ñ¾l¼Æ(¨¤¦â, gm);
+                    int è§’è‰² = gm.è§’è‰²;
+                    int å‰©é¤˜æ•¸ = Getå‰©é¤˜æ•¸(è§’è‰², gm);
 
-                    if (³Ñ¾l¼Æ > 0)
+                    if (å‰©é¤˜æ•¸ > 0)
                     {
-                        // ³¡¸p¯¥¥x
+                        // éƒ¨ç½²ç ²å°
                         Vector3 newPos = hit.transform.position;
                         newPos.y += 0.15f;
 
-                        GameObject ¤w³¡¸p;
+                        GameObject å·²éƒ¨ç½²;
 
-                        if (hit.transform.name == "§d¨F±ÏÅ@¥Í¦¨ÂI(¥i³¡¸p)")
+                        if (hit.transform.name == "å³æ²™æ•‘è­·ç”Ÿæˆé»(å¯éƒ¨ç½²)")
                         {
-                            ¤w³¡¸p = Instantiate(§d¨F, newPos, Quaternion.identity);
+                            å·²éƒ¨ç½² = Instantiate(å³æ²™, newPos, Quaternion.identity);
                         }
                         else
                         {
-                            ¤w³¡¸p = Instantiate(¯¥¥x[¨¤¦â], newPos, Quaternion.identity);
+                            å·²éƒ¨ç½² = Instantiate(ç ²å°[è§’è‰²], newPos, Quaternion.identity);
                         }
 
-                        ¤w³¡¸p.tag = "¨¾¦u¤è";
+                        å·²éƒ¨ç½².tag = "é˜²å®ˆæ–¹";
 
-                        // §ó·s³Ñ¾l¼Æ¶q
-                        Update³Ñ¾l¼Æ(¨¤¦â, gm);
+                        // æ›´æ–°å‰©é¤˜æ•¸é‡
+                        Updateå‰©é¤˜æ•¸(è§’è‰², gm);
                     }
                 }
             }
@@ -69,35 +69,35 @@ public class deploy : MonoBehaviour
     }
 
 
-    // ©â¨ú³Ñ¾l¼ÆÅŞ¿è¡A´î¤Ö­«½Æ¥N½X
-    int Get³Ñ¾l¼Æ(int ¨¤¦â, gameMaster gm)
+    // æŠ½å–å‰©é¤˜æ•¸é‚è¼¯ï¼Œæ¸›å°‘é‡è¤‡ä»£ç¢¼
+    int Getå‰©é¤˜æ•¸(int è§’è‰², gameMaster gm)
     {
-        switch (¨¤¦â)
+        switch (è§’è‰²)
         {
             case 0:
-                return gm.¯¥A¤W­­;
+                return gm.ç ²Aä¸Šé™;
             case 1:
-                return gm.¯¥B¤W­­;
+                return gm.ç ²Bä¸Šé™;
             case 2:
-                return gm.¯¥C¤W­­;
+                return gm.ç ²Cä¸Šé™;
             default:
                 return 0;
         }
     }
 
-    // ©â¨ú§ó·s³Ñ¾l¼ÆªºÅŞ¿è¡A´î¤Ö­«½Æ¥N½X
-    void Update³Ñ¾l¼Æ(int ¨¤¦â, gameMaster gm)
+    // æŠ½å–æ›´æ–°å‰©é¤˜æ•¸çš„é‚è¼¯ï¼Œæ¸›å°‘é‡è¤‡ä»£ç¢¼
+    void Updateå‰©é¤˜æ•¸(int è§’è‰², gameMaster gm)
     {
-        switch (¨¤¦â)
+        switch (è§’è‰²)
         {
             case 0:
-                gm.¯¥A¤W­­--;
+                gm.ç ²Aä¸Šé™--;
                 break;
             case 1:
-                gm.¯¥B¤W­­--;
+                gm.ç ²Bä¸Šé™--;
                 break;
             case 2:
-                gm.¯¥C¤W­­--;
+                gm.ç ²Cä¸Šé™--;
                 break;
             default:
                 break;
