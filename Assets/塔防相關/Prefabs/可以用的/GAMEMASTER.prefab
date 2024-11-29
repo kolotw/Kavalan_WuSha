@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3732847606911250852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1640350049751437419}
+  - component: {fileID: 4089801654592828354}
+  m_Layer: 0
+  m_Name: GAMEMASTER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1640350049751437419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3732847606911250852}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.9749688, y: 1.1410341, z: 4.959627}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4089801654592828354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3732847606911250852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9844f4a7950de8499d3424fb9b83573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "\u5B88\u65B9":
+  - {fileID: 8926293936192623179, guid: 48aa185f42534ac4fbfeb6430ee29556, type: 3}
+  - {fileID: 167516268078109821, guid: ea58cc109fb5712468851df779622267, type: 3}
+  - {fileID: 3518558975092355882, guid: c9a633c982a38c94e96f8aebfab0a6f3, type: 3}
+  "\u653B\u65B9":
+  - {fileID: 5111264895941581228, guid: 229c5deb6dc38004bb60e2426c4cbad1, type: 3}
+  - {fileID: 5168224026838959777, guid: d0e4010987d37344aa9fa018009bb153, type: 3}
+  "\u7832A\u4E0A\u9650": 5
+  "\u7832B\u4E0A\u9650": 5
+  "\u7832C\u4E0A\u9650": 5
+  "\u5433\u6C99": {fileID: 0}
+  "\u76EE\u524D\u95DC\u5361": 1
+  "\u6BCF\u5E7E\u79D2\u7522\u751F\u4E00\u6CE2": 10
+  "\u6BCF\u6B21\u7522\u751F\u6575\u4EBA\u7684\u9593\u9694": 3
+  "\u6BCF\u6B21\u751F\u6210\u6575\u4EBA\u6578": 2
+  "\u653B\u52E2\u4E0A\u9650": 1
+  "\u76EE\u524D\u7B2C\u5E7E\u6CE2\u653B\u52E2": 0
+  "\u653B\u52E2\u6587\u5B57": {fileID: 0}
+  "\u8CC7\u6E90\u6587\u5B57": {fileID: 0}
+  EndGame: 0
+  "\u958B\u59CB\u756B\u9762": {fileID: 0}
+  isWin: 0
+  startGame: 0
+  gUI: {fileID: 0}
+  "\u89D2\u8272": 0

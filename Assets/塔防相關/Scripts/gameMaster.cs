@@ -36,7 +36,7 @@ public class gameMaster : MonoBehaviour
     public Text 攻勢文字; // 第幾關，第幾波，倒數… 勝敗訊息
     public Text 資源文字;
 
-    bool EndGame = false;
+    public bool EndGame = false;
     bool 已熄火 = false;
 
     public GameObject 開始畫面;
@@ -144,6 +144,7 @@ public class gameMaster : MonoBehaviour
 
     public void 按下開始()
     {
+        startGame = true;
         開始畫面.SetActive(false);
         StartCoroutine(一波敵人());
     }

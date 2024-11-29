@@ -31,7 +31,7 @@ public class CameraControl : MonoBehaviour
             dragOrigin = Input.mousePosition;
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(2))
         {
             Vector3 difference = (Input.mousePosition - dragOrigin) * dragSpeed * Time.deltaTime;
 

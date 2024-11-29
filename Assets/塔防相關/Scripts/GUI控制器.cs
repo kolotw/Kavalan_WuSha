@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class GUI控制器 : MonoBehaviour
@@ -95,6 +96,32 @@ public class GUI控制器 : MonoBehaviour
         //myLabel.text = "繼續";
         ve_Start.style.display = DisplayStyle.None;
         GameObject.Find("/GAMEMASTER").GetComponent<gameMaster>().startGame = true;
+        if(GameObject.Find("/GAMEMASTER").GetComponent<gameMaster>().EndGame == true)
+        {
+            string sName = SceneManager.GetActiveScene().name;
+            switch (sName)
+            {
+                case "第一關":
+                    SceneManager.LoadScene("第二關");
+                    break;
+                case "第二關":
+                    SceneManager.LoadScene("第三關");
+                    break;
+                case "第三關":
+                    SceneManager.LoadScene("第四關");
+                    break;
+                case "第四關":
+                    SceneManager.LoadScene("第五關");
+                    break;
+                case "第五關":
+                    SceneManager.LoadScene("第六關");
+                    break;
+                case "第六關":
+                    break;
+                default:
+                    break;
+            }
+        }
     }
     private void OnResBtnBackClicked()
     {
