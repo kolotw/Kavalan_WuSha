@@ -51,4 +51,5 @@ public class MainPageActions : MonoBehaviour
     public void TD_Level4() { SceneManager.LoadScene("第四關"); }
     public void TD_Level5() { SceneManager.LoadScene("第五關"); }
     public void TD_Level6() { SceneManager.LoadScene("第六關"); }
+    public void TD_Back() { SceneManager.LoadScene("02_塔防遊戲"); }
 }

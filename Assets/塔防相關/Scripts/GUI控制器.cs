@@ -90,6 +90,7 @@ public class GUI控制器 : MonoBehaviour
     private void OnBtnBackClicked()
     {
         //myLabel.text = "返回";
+        SceneManager.LoadScene("02_塔防遊戲");
     }
     private void OnBtnGoClicked()
     {

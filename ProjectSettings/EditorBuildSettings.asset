@@ -9,22 +9,22 @@ EditorBuildSettings:
     path: Assets/00HomePage.unity
     guid: c2fa5a874e229834fa3cd5aa49febaed
   - enabled: 1
-    path: "Assets/\u5854\u9632\u76F8\u95DC/\u6B63\u5F0F\u95DC\u5361/\u7B2C\u4E00\u95DC.unity"
+    path: "Assets/00\u6B63\u5F0F\u95DC\u5361/\u7B2C\u4E00\u95DC.unity"
     guid: 6d5de2db072f7c2448ca3a2e0bd81ed9
   - enabled: 1
-    path: "Assets/\u5854\u9632\u76F8\u95DC/\u6B63\u5F0F\u95DC\u5361/\u7B2C\u4E09\u95DC.unity"
+    path: "Assets/00\u6B63\u5F0F\u95DC\u5361/\u7B2C\u4E09\u95DC.unity"
     guid: e615da80b30a0f340bcdd550ef8fb2fd
   - enabled: 1
-    path: "Assets/\u5854\u9632\u76F8\u95DC/\u6B63\u5F0F\u95DC\u5361/\u7B2C\u4E8C\u95DC.unity"
+    path: "Assets/00\u6B63\u5F0F\u95DC\u5361/\u7B2C\u4E8C\u95DC.unity"
     guid: 9475cb1e7fd1e8c44b3640c1008f294e
   - enabled: 1
-    path: "Assets/\u5854\u9632\u76F8\u95DC/\u6B63\u5F0F\u95DC\u5361/\u7B2C\u4E94\u95DC.unity"
+    path: "Assets/00\u6B63\u5F0F\u95DC\u5361/\u7B2C\u4E94\u95DC.unity"
     guid: 14152b438021ca4458be0ac3e53c6cc3
   - enabled: 1
-    path: "Assets/\u5854\u9632\u76F8\u95DC/\u6B63\u5F0F\u95DC\u5361/\u7B2C\u516D\u95DC.unity"
+    path: "Assets/00\u6B63\u5F0F\u95DC\u5361/\u7B2C\u516D\u95DC.unity"
     guid: d558655d97e18944b87dd9eb0aa0e4ec
   - enabled: 1
-    path: "Assets/\u5854\u9632\u76F8\u95DC/\u6B63\u5F0F\u95DC\u5361/\u7B2C\u56DB\u95DC.unity"
+    path: "Assets/00\u6B63\u5F0F\u95DC\u5361/\u7B2C\u56DB\u95DC.unity"
     guid: 930b6fa4a3a2d7249982776430835a47
   - enabled: 1
     path: "Assets/01_\u8D70\u8B80\u5433\u6C99.unity"
