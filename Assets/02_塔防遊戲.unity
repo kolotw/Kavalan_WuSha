@@ -2256,7 +2256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5B9C\u862D\u7F8E\u8853\u9928"
+  m_text: "\u4E94\u570D"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1e84daf2f8c2d04db46207fcd4eed69, type: 2}
   m_sharedMaterial: {fileID: 2991645686335823631, guid: f1e84daf2f8c2d04db46207fcd4eed69,
@@ -4085,7 +4085,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -213.189, y: -239.938}
+  m_AnchoredPosition: {x: -213.97, y: -240.07}
   m_SizeDelta: {x: 15, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &262174710
@@ -4169,7 +4169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.047991276, a: 1}
+  m_Color: {r: 0, g: 0.6055155, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4728,7 +4728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &330193997
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4769,7 +4769,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 93ffa4b8fce6a4641bb70f99ea8f5a56, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4790,7 +4790,7 @@ Transform:
   m_GameObject: {fileID: 330193996}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.16, y: -6.79, z: 0}
+  m_LocalPosition: {x: 7.34, y: -6.63, z: 0}
   m_LocalScale: {x: 2.1525, y: 2.1525, z: 2.1525}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5183,7 +5183,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1784666024}
         m_TargetAssemblyTypeName: MainPageActions, Assembly-CSharp
-        m_MethodName: eBookButton5
+        m_MethodName: TD_Level5
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5928,7 +5928,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1784666024}
         m_TargetAssemblyTypeName: MainPageActions, Assembly-CSharp
-        m_MethodName: eBookButton1
+        m_MethodName: TD_Level1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6901,7 +6901,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u6FA4\u862D\u5BAE"
+  m_text: "\u982D\u570D"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1e84daf2f8c2d04db46207fcd4eed69, type: 2}
   m_sharedMaterial: {fileID: -5840430127855040, guid: c8152bfbe8067914d90efda87dc59943,
@@ -7311,7 +7311,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -213.282, y: -236.475}
+  m_AnchoredPosition: {x: -212.66, y: -237.96}
   m_SizeDelta: {x: 15, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &536603046
@@ -7395,7 +7395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.047991276, a: 1}
+  m_Color: {r: 0, g: 0.6055155, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7456,7 +7456,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -206.802, y: -230.656}
+  m_AnchoredPosition: {x: -213.34, y: -238.95}
   m_SizeDelta: {x: 15, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &539226806
@@ -7540,7 +7540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.047991276, a: 1}
+  m_Color: {r: 0, g: 0.6055155, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7869,7 +7869,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1784666024}
         m_TargetAssemblyTypeName: MainPageActions, Assembly-CSharp
-        m_MethodName: eBookButton2
+        m_MethodName: TD_Level2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9254,7 +9254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u9F9C\u5C71\u5CF6\u6587\u5316\u9928"
+  m_text: "\u56DB\u570D"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1e84daf2f8c2d04db46207fcd4eed69, type: 2}
   m_sharedMaterial: {fileID: 2991645686335823631, guid: f1e84daf2f8c2d04db46207fcd4eed69,
@@ -10112,7 +10112,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 2a97cc4ad82416f499eb7a608deee73f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10721,7 +10721,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u8D70\u8B80\u5433\u6C99"
+  m_text: "\u5854\u9632\u904A\u6232"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1e84daf2f8c2d04db46207fcd4eed69, type: 2}
   m_sharedMaterial: {fileID: 2991645686335823631, guid: f1e84daf2f8c2d04db46207fcd4eed69,
@@ -10785,7 +10785,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 15.220212, w: -12.43342}
+  m_margin: {x: 0, y: 0, z: 0.000002861023, w: -0.10719013}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -10852,9 +10852,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.33, y: 6}
-  m_SizeDelta: {x: 20, y: 5}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -14.2885, y: 0.6676}
+  m_SizeDelta: {x: 4.0831, y: 15.6649}
+  m_Pivot: {x: 0.50000006, y: 0.50000006}
 --- !u!1 &793709547
 GameObject:
   m_ObjectHideFlags: 0
@@ -11492,7 +11492,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1784666024}
         m_TargetAssemblyTypeName: MainPageActions, Assembly-CSharp
-        m_MethodName: eBookButton4
+        m_MethodName: TD_Level4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11866,7 +11866,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u54F2\u601D\u66F8\u68E7"
+  m_text: "\u4E09\u570D"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1e84daf2f8c2d04db46207fcd4eed69, type: 2}
   m_sharedMaterial: {fileID: -5840430127855040, guid: c8152bfbe8067914d90efda87dc59943,
@@ -12539,7 +12539,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 062f023c55815d84e8a3ac61a5ed8e59, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -13267,7 +13267,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1784666024}
         m_TargetAssemblyTypeName: MainPageActions, Assembly-CSharp
-        m_MethodName: eBookButton3
+        m_MethodName: TD_Level3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14056,7 +14056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1069937215
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14118,7 +14118,7 @@ Transform:
   m_GameObject: {fileID: 1069937214}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.1533, y: -6.2767, z: 0}
+  m_LocalPosition: {x: 13.78, y: -6.17, z: 0}
   m_LocalScale: {x: 2.4322362, y: 2.4322362, z: 2.4322362}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15575,7 +15575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1202804121
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15637,7 +15637,7 @@ Transform:
   m_GameObject: {fileID: 1202804120}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.26, y: -6.46, z: 0}
+  m_LocalPosition: {x: 11.94, y: -5.01, z: 0}
   m_LocalScale: {x: 2.3714, y: 2.3714, z: 2.3714}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16220,7 +16220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1271675708
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16729,7 +16729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -212.917, y: -238.809}
+  m_AnchoredPosition: {x: -210.29, y: -234.99}
   m_SizeDelta: {x: 15, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1288618731
@@ -16813,7 +16813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.047991276, a: 1}
+  m_Color: {r: 0, g: 0.6055155, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -17648,7 +17648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -214.221, y: -238.343}
+  m_AnchoredPosition: {x: -211.3, y: -235.08}
   m_SizeDelta: {x: 15, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1357230499
@@ -17732,7 +17732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.047991276, a: 1}
+  m_Color: {r: 0, g: 0.6055155, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -18039,7 +18039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1385207267
 Transform:
   m_ObjectHideFlags: 0
@@ -18198,7 +18198,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5433\u6C99\u6545\u5C45"
+  m_text: "\u70CF\u77F3\u6E2F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1e84daf2f8c2d04db46207fcd4eed69, type: 2}
   m_sharedMaterial: {fileID: -5840430127855040, guid: c8152bfbe8067914d90efda87dc59943,
@@ -18291,7 +18291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1405903129
 Transform:
   m_ObjectHideFlags: 0
@@ -20853,7 +20853,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1784666024}
         m_TargetAssemblyTypeName: MainPageActions, Assembly-CSharp
-        m_MethodName: eBookButton6
+        m_MethodName: TD_Level6
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21808,7 +21808,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u9F8D\u6F6D\u6E56"
+  m_text: "\u6E6F\u570D"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1e84daf2f8c2d04db46207fcd4eed69, type: 2}
   m_sharedMaterial: {fileID: -5840430127855040, guid: c8152bfbe8067914d90efda87dc59943,
@@ -22467,7 +22467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1829214467
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23684,7 +23684,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -216.291, y: -238.702}
+  m_AnchoredPosition: {x: -213.98, y: -237.7}
   m_SizeDelta: {x: 15, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1900089521
@@ -23768,7 +23768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.047991276, a: 1}
+  m_Color: {r: 0, g: 0.6055155, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -24211,7 +24211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1925436284
 RectTransform:
   m_ObjectHideFlags: 0

@@ -45,4 +45,10 @@ public class MainPageActions : MonoBehaviour
     public void eBookButton9() {
         SceneManager.LoadScene("Chapter9");
     }
+    public void TD_Level1() { SceneManager.LoadScene("第一關");}
+    public void TD_Level2() { SceneManager.LoadScene("第二關"); }
+    public void TD_Level3() { SceneManager.LoadScene("第三關"); }
+    public void TD_Level4() { SceneManager.LoadScene("第四關"); }
+    public void TD_Level5() { SceneManager.LoadScene("第五關"); }
+    public void TD_Level6() { SceneManager.LoadScene("第六關"); }
 }
