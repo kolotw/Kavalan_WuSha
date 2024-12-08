@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     }
     public void button1()
     {
-        print("hello");
+        //print("hello");
     }
   
 }

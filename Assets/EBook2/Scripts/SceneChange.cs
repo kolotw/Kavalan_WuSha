@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
     public int chapernum;
-    public string menu = "Menu";
+    string menu = "01_¨«Åª§d¨F";
     void Start()
     {
         
