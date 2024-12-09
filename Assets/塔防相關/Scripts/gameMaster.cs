@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class gameMaster : MonoBehaviour
 {
@@ -53,9 +56,15 @@ public class gameMaster : MonoBehaviour
         攻擊倒數 = 每幾秒產生一波;
         if (gUI != null)
         {
-            gUI.myLabel.text = string.Empty;
+            //gUI.myLabel.text = string.Empty;
+            string sceneName = SceneManager.GetActiveScene().name;
+            if ((sceneName == "第二關") || (sceneName == "第五關"))
+            {
+                //gUI.button1.style.display = DisplayStyle.None;
+                gUI.ve_Top.style.display = DisplayStyle.None;
+            }
         }
-        
+
     }
     void 熄火() {
         GameObject[] turrets = GameObject.FindGameObjectsWithTag("噶瑪蘭");

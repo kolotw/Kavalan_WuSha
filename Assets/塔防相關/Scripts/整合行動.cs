@@ -276,6 +276,7 @@ public class 整合行動 : MonoBehaviour
         }
         else
         {
+            if(this.name != "病毒_史萊姆(Clone)")
             目標 = GameObject.Find("/target")?.transform;
         }
 

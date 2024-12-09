@@ -21,13 +21,7 @@ public class 漢人砍劈 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            anim.SetTrigger("FIRE");
-        }
-    }
+
     public void 開始砍()
     {
         if (目標 != null)

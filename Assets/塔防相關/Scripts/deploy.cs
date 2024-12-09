@@ -14,9 +14,20 @@ public class deploy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        砲台[0] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().守方[0];
-        砲台[1] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().守方[1];
-        砲台[2] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().守方[2];
+        switch (GameObject.Find("/GAMEMASTER").GetComponent<gameMaster>().守方.Length)
+        {
+            case 1:
+                砲台[0] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().守方[0];
+                break;
+            case 3:
+                砲台[0] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().守方[0];
+                砲台[1] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().守方[1];
+                砲台[2] = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().守方[2];
+                break;
+            default:
+                break;
+        }
+        
         吳沙 = GameObject.Find("GAMEMASTER").GetComponent<gameMaster>().吳沙;
     }
 

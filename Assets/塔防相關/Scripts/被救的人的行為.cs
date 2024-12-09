@@ -48,8 +48,8 @@ public class 被救的人的行為 : MonoBehaviour
     public void 跑回家() 
     {
         anim.SetTrigger("BACKHOME");
-        Transform home = GameObject.Find("/target").transform;
-        agent.SetDestination(home.transform.position);
+        //Transform home = GameObject.Find("/target").transform;
+        agent.SetDestination(target.transform.position);
         this.tag = "漢人";
     }
 }

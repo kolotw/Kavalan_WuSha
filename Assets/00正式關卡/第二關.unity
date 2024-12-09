@@ -1041,6 +1041,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: woodStructure_high (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8842beb295debdb4b8112e946bf83a00,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1564,6 +1569,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f7f5e1e5da80f947a3f3acccec894bb, type: 3}
+--- !u!114 &239733921 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8830212202029521489, guid: 1f7f5e1e5da80f947a3f3acccec894bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 239733920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656c3cab248b5e24380e0b2bc8361f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &249290323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 46f9d95242273794abfae5dc273d24ce,
@@ -3464,6 +3481,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: woodStructure_high (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8842beb295debdb4b8112e946bf83a00,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3701,7 +3723,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.06666667
   m_MinRegionArea: 1
-  m_NavMeshData: {fileID: 23800000, guid: f94da2202f0ccc9449f2a4def2566648, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 243b43d1793f3dd47a73f2287b29c036, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &472358650
 Transform:
@@ -7031,6 +7053,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: woodStructure_high (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8842beb295debdb4b8112e946bf83a00,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9808,6 +9835,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: woodStructure_high (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8842beb295debdb4b8112e946bf83a00,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10015,6 +10047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "\u5B88\u65B9":
   - {fileID: 6204196485707241439, guid: 36eb548918b8908418c94403d9c0d831, type: 3}
+  - {fileID: 5111264895941581228, guid: 229c5deb6dc38004bb60e2426c4cbad1, type: 3}
   "\u653B\u65B9":
   - {fileID: 5112007317000491882, guid: 3442547816531284290f7e96174bfc0a, type: 3}
   "\u7832A\u4E0A\u9650": 1
@@ -10034,7 +10067,7 @@ MonoBehaviour:
   "\u958B\u59CB\u756B\u9762": {fileID: 2125224920}
   isWin: 0
   startGame: 0
-  gUI: {fileID: 0}
+  gUI: {fileID: 239733921}
   "\u89D2\u8272": 0
 --- !u!4 &1268580729
 Transform:
@@ -11298,6 +11331,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: woodStructure_high
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8842beb295debdb4b8112e946bf83a00,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12906,7 +12944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1601178082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13157,7 +13195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1648002912
 Transform:
   m_ObjectHideFlags: 0
@@ -14121,6 +14159,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: woodStructure_high (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8842beb295debdb4b8112e946bf83a00,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15852,6 +15895,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: woodStructure_high (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8842beb295debdb4b8112e946bf83a00,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16196,6 +16244,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: woodStructure_high (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8842beb295debdb4b8112e946bf83a00,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

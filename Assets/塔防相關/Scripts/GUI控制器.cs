@@ -1,3 +1,4 @@
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -5,9 +6,10 @@ using UnityEngine.UIElements;
 public class GUI控制器 : MonoBehaviour
 {
     private UIDocument uiDocument;
-    private Button button1;
-    private Button button2;
-    private Button button3;
+    public VisualElement ve_Top;
+    public Button button1;
+    public Button button2;
+    public Button button3;
     public Label myLabel;
     public Label selected;
     public Label leftA;
@@ -31,7 +33,7 @@ public class GUI控制器 : MonoBehaviour
         var root = uiDocument.rootVisualElement;
         ve_Start = root.Q<VisualElement>("VE_StartPanel"); //關卡說明面板
         ve_Result = root.Q<VisualElement>("VE_Result");
-
+        ve_Top = root.Q<VisualElement>("VE_Top");
         // 查找 Button 和 Label 元件
         button1 = root.Q<Button>("Button_KavalanFemale1"); // 假設第一個按鈕名稱為 "button1"
         button2 = root.Q<Button>("Button_KavalanFemale2"); // 假設第二個按鈕名稱為 "button2"
@@ -127,10 +129,33 @@ public class GUI控制器 : MonoBehaviour
     private void OnResBtnBackClicked()
     {
         //myLabel.text = "返回";
+        SceneManager.LoadScene("02_塔防遊戲");
     }
     private void OnResBtnGoClicked()
     {
         //myLabel.text = "返回";
+        switch (SceneManager.GetActiveScene().name) {
+            case "第一關":
+                SceneManager.LoadScene("第二關");
+                break;
+            case "第二關":
+                SceneManager.LoadScene("第三關");
+                break;
+            case "第三關":
+                SceneManager.LoadScene("第四關");
+                break;
+            case "第四關":
+                SceneManager.LoadScene("第五關");
+                break;
+            case "第五關":
+                SceneManager.LoadScene("第六關");
+                break;
+            case "第六關":
+                SceneManager.LoadScene("02_塔防遊戲");
+                break;
+            default:
+                break;
+        }
     }
     public void result(bool isWin)
     {

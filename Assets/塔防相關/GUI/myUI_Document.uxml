@@ -1,8 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/%E5%A1%94%E9%98%B2%E7%9B%B8%E9%97%9C/GUI/myUI_StyleSheets.uss?fileID=7433441132597879392&amp;guid=81f349e434bca6a46ac31f1ab1853e99&amp;type=3#myUI_StyleSheets" />
     <ui:VisualElement style="flex-grow: 0.5; flex-direction: row;">
-        <ui:VisualElement name="VisualElement" style="flex-grow: 1; flex-direction: row; max-height: 135px; min-height: 70px; margin-bottom: 10px; margin-left: 10px; margin-top: 10px; flex-shrink: 0; width: auto;">
-            <ui:Label tabindex="-1" text="選擇角色" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label_Char" style="color: rgb(200, 200, 200); font-size: 30px; width: 74px; white-space: normal;" />
+        <ui:VisualElement name="VE_Top" style="flex-grow: 1; flex-direction: row; max-height: 135px; min-height: 70px; margin-bottom: 10px; margin-left: 10px; margin-top: 10px; flex-shrink: 0; width: auto;">
+            <ui:Label tabindex="-1" text="選擇角色" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label_Char" style="color: rgb(200, 200, 200); font-size: 30px; width: 74px; white-space: normal; -unity-font: url(&quot;project://database/Assets/Fonts/bWEI00B.ttf?fileID=12800000&amp;guid=ea90f51379139ee4bac2afcc962b99e7&amp;type=3#bWEI00B&quot;); -unity-font-definition: initial;" />
             <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button_KavalanFemale1" class="button-kavalan" style="flex-direction: column-reverse; justify-content: flex-start;">
                 <ui:Label tabindex="-1" text="5" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label_LeftA" class="label_leftNumber" />
             </ui:Button>
@@ -14,7 +14,7 @@
             </ui:Button>
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1;">
-            <ui:Label tabindex="-1" text="關卡資訊" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label_Info" style="font-size: 30px; -unity-text-align: middle-left; color: rgb(209, 209, 209); width: 325px; align-items: auto; justify-content: flex-start; white-space: normal; align-self: auto; flex-direction: column;" />
+            <ui:Label tabindex="-1" text="關卡資訊" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label_Info" style="font-size: 30px; -unity-text-align: middle-left; color: rgb(209, 209, 209); width: 605px; align-items: auto; justify-content: flex-start; white-space: normal; align-self: auto; flex-direction: column; -unity-font: url(&quot;project://database/Assets/Fonts/bWEI00B.ttf?fileID=12800000&amp;guid=ea90f51379139ee4bac2afcc962b99e7&amp;type=3#bWEI00B&quot;); -unity-font-definition: initial;" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="VE_StartPanel" style="flex-grow: 1; position: absolute; left: 100px; top: 50px; right: 100px; bottom: 50px; background-image: url(&quot;project://database/Assets/%E5%A1%94%E9%98%B2%E7%9B%B8%E9%97%9C/%E8%B3%87%E6%BA%90%E5%8C%85/KenneyGUI/panelInset_beige.png?fileID=2800000&amp;guid=6920f44d2159aa0488cbee41f9aea3a8&amp;type=3#panelInset_beige&quot;); display: none; opacity: 1;">
@@ -44,13 +44,13 @@
         </ui:VisualElement>
         <ui:VisualElement name="VE_Contain" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/%E5%A1%94%E9%98%B2%E7%9B%B8%E9%97%9C/%E8%B3%87%E6%BA%90%E5%8C%85/KenneyGUI/panelInset_beigeLight.png?fileID=2800000&amp;guid=4fec9f064285649429769c62a54c231e&amp;type=3#panelInset_beigeLight&quot;); flex-direction: row; flex-shrink: 0.9;">
             <ui:VisualElement style="align-self: center; align-items: center; flex-shrink: 0; flex-grow: 1;">
-                <ui:Label tabindex="-1" text="勝利" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label_Result" style="-unity-text-align: middle-center; align-self: center; align-items: center; justify-content: center; font-size: 190px; color: rgb(48, 164, 0);" />
+                <ui:Label tabindex="-1" text="勝利" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label_Result" style="-unity-text-align: middle-center; align-self: center; align-items: center; justify-content: center; font-size: 190px; color: rgb(48, 164, 0); -unity-font: url(&quot;project://database/Assets/Fonts/bWEI00B.ttf?fileID=12800000&amp;guid=ea90f51379139ee4bac2afcc962b99e7&amp;type=3#bWEI00B&quot;); -unity-font-definition: initial;" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="VE_Buttons" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/%E5%A1%94%E9%98%B2%E7%9B%B8%E9%97%9C/%E8%B3%87%E6%BA%90%E5%8C%85/KenneyGUI/buttonLong_brown_pressed.png?fileID=2800000&amp;guid=4ae2d159def103f4494c4bee8072952b&amp;type=3#buttonLong_brown_pressed&quot;); max-height: 89px; flex-direction: row;">
-            <ui:Button text="返回" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Res_btn_Back" class="label_leftNumber" style="left: 20px;" />
+            <ui:Button text="返回" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Res_btn_Back" class="label_leftNumber" style="left: 20px; -unity-font: url(&quot;project://database/Assets/Fonts/bWEI00B.ttf?fileID=12800000&amp;guid=ea90f51379139ee4bac2afcc962b99e7&amp;type=3#bWEI00B&quot;); -unity-font-definition: initial;" />
             <ui:VisualElement style="flex-grow: 1;" />
-            <ui:Button text="繼續" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Res_btn_Go" class="label_leftNumber" style="right: 20px;" />
+            <ui:Button text="繼續" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Res_btn_Go" class="label_leftNumber" style="right: 20px; -unity-font: url(&quot;project://database/Assets/Fonts/bWEI00B.ttf?fileID=12800000&amp;guid=ea90f51379139ee4bac2afcc962b99e7&amp;type=3#bWEI00B&quot;); -unity-font-definition: initial;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

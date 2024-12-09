@@ -114,6 +114,7 @@ public class 救人的行為 : MonoBehaviour
             anim.SetTrigger("WIN");
             導航.isStopped = true;
             anim.SetBool("Run", false);
+            GameObject.Find("/GAMEMASTER").GetComponent<gameMaster>().isWin = true;
         }
         else
         {

@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 4
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 403633912}
   m_HandleRect: {fileID: 403633911}
   m_Direction: 0
-  m_Value: 0.9999998
+  m_Value: 0.99999994
   m_Size: 0.2280285
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2120559234}
   m_HandleRect: {fileID: 2120559233}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1276,7 +1276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 0.6
+  m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0

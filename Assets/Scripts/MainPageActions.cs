@@ -10,11 +10,11 @@ public class MainPageActions : MonoBehaviour
         SceneManager.LoadScene("01_走讀吳沙");
     }
     public void 塔防遊戲() {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("02_塔防遊戲");
     }
     public void 工作人員()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("03_CreditList");
     }
     public void eBookButton1()
     {
@@ -52,4 +52,6 @@ public class MainPageActions : MonoBehaviour
     public void TD_Level5() { SceneManager.LoadScene("第五關"); }
     public void TD_Level6() { SceneManager.LoadScene("第六關"); }
     public void TD_Back() { SceneManager.LoadScene("02_塔防遊戲"); }
+
+    public void BackHome() { SceneManager.LoadScene("00_HomePage"); }
 }

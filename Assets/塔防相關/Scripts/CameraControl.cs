@@ -6,7 +6,7 @@ public class CameraControl : MonoBehaviour
     public float minZoom = 2.5f;  // 最小縮放值
     public float maxZoom = 6f;    // 最大縮放值
 
-    public float dragSpeed = 0.0001f; // 拖曳速度
+    private float dragSpeed = 0.1f; // 拖曳速度
 
     // 移動邊界
     public float minX = -8f;
