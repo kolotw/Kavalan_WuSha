@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 262.38358, g: 325.10843, b: 430.30963, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12292,14 +12292,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9844f4a7950de8499d3424fb9b83573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\u7832\u53F0":
-  - {fileID: 3518558975092355882, guid: c9a633c982a38c94e96f8aebfab0a6f3, type: 3}
-  - {fileID: 8926293936192623179, guid: 48aa185f42534ac4fbfeb6430ee29556, type: 3}
-  "\u6575\u4EBA":
-  - {fileID: 5111264895941581228, guid: 229c5deb6dc38004bb60e2426c4cbad1, type: 3}
-  - {fileID: 5168224026838959777, guid: d0e4010987d37344aa9fa018009bb153, type: 3}
+  "\u5B88\u65B9":
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  "\u653B\u65B9":
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   "\u7832A\u4E0A\u9650": 5
   "\u7832B\u4E0A\u9650": 5
+  "\u7832C\u4E0A\u9650": 5
   "\u5433\u6C99": {fileID: 0}
   "\u76EE\u524D\u95DC\u5361": 1
   "\u6BCF\u5E7E\u79D2\u7522\u751F\u4E00\u6CE2": 10
@@ -12309,7 +12312,12 @@ MonoBehaviour:
   "\u76EE\u524D\u7B2C\u5E7E\u6CE2\u653B\u52E2": 0
   "\u653B\u52E2\u6587\u5B57": {fileID: 62228255}
   "\u8CC7\u6E90\u6587\u5B57": {fileID: 449029484}
+  EndGame: 0
   "\u958B\u59CB\u756B\u9762": {fileID: 2125224920}
+  isWin: 0
+  startGame: 0
+  gUI: {fileID: 0}
+  "\u89D2\u8272": 0
 --- !u!4 &1268580729
 Transform:
   m_ObjectHideFlags: 0

@@ -59,6 +59,8 @@ MonoBehaviour:
   PlayVoice: 0
   InitialCount: 0
   AddCount: 0.053
+  StartX: 0
+  EndX: 0
 --- !u!1 &527615607781301836
 GameObject:
   m_ObjectHideFlags: 0

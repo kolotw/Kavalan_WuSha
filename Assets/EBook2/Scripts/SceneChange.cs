@@ -7,16 +7,6 @@ public class SceneChange : MonoBehaviour
 {
     public int chapernum;
     string menu = "01_¨«Åª§d¨F";
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void Menu()
     {
         SceneManager.LoadScene(menu);

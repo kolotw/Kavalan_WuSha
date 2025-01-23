@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 262.38358, g: 325.10843, b: 430.30963, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8171,7 +8171,6 @@ MonoBehaviour:
   zoomSpeed: 2
   minZoom: 2.5
   maxZoom: 6
-  dragSpeed: 0.1
   minX: -8
   maxX: -1
   minY: 2
@@ -11053,6 +11052,7 @@ MonoBehaviour:
   "\u76EE\u524D\u7B2C\u5E7E\u6CE2\u653B\u52E2": 0
   "\u653B\u52E2\u6587\u5B57": {fileID: 62228255}
   "\u8CC7\u6E90\u6587\u5B57": {fileID: 449029484}
+  EndGame: 0
   "\u958B\u59CB\u756B\u9762": {fileID: 2125224920}
   isWin: 0
   startGame: 0

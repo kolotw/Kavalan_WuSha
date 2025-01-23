@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 262.38358, g: 325.10843, b: 430.30963, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8208,7 +8208,6 @@ MonoBehaviour:
   zoomSpeed: 2
   minZoom: 2.5
   maxZoom: 6
-  dragSpeed: 0.1
   minX: -8
   maxX: -1
   minY: 2
@@ -11078,6 +11077,7 @@ MonoBehaviour:
   - {fileID: 5168224026838959777, guid: d0e4010987d37344aa9fa018009bb153, type: 3}
   "\u7832A\u4E0A\u9650": 5
   "\u7832B\u4E0A\u9650": 5
+  "\u7832C\u4E0A\u9650": 5
   "\u5433\u6C99": {fileID: 0}
   "\u76EE\u524D\u95DC\u5361": 1
   "\u6BCF\u5E7E\u79D2\u7522\u751F\u4E00\u6CE2": 10
@@ -11087,8 +11087,12 @@ MonoBehaviour:
   "\u76EE\u524D\u7B2C\u5E7E\u6CE2\u653B\u52E2": 0
   "\u653B\u52E2\u6587\u5B57": {fileID: 62228255}
   "\u8CC7\u6E90\u6587\u5B57": {fileID: 449029484}
+  EndGame: 0
   "\u958B\u59CB\u756B\u9762": {fileID: 2125224920}
   isWin: 0
+  startGame: 0
+  gUI: {fileID: 0}
+  "\u89D2\u8272": 0
 --- !u!4 &1268580729
 Transform:
   m_ObjectHideFlags: 0
